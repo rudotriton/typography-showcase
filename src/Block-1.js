@@ -1,53 +1,64 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const colors = [
-  '#fe8ce2',
-  '#fe7fdf',
-  '#fc66d8',
-  '#fa4ed2',
-  '#f638cd',
-  '#f225c8',
-  '#ed15c4',
-  '#e707c1',
-  '#e000c0',
-  '#d700bf',
-  '#cd00bc',
-  '#c100b9',
-  '#b300a5',
-  '#9e00a5',
-  '#8a0096',
-  '#770087',
-];
+const red = '#F40000';
+const green = '#04E762';
+const blue = '#2176FF';
+const yellow = '#FFBA00';
+const pink = '#DC0073';
 
-const perspective = (x, y) => {
-  let shadowPos = '';
-  for (let i = 1; i < colors.length; i += 1) {
-    shadowPos += `${x}${i}px ${y}${i}px ${colors[i]}, `;
+const zebraShadow = (size, colors) => {
+  let textShadow = '';
+  for (let i = 0; i < colors.length; i += 1) {
+    for (let j = 0; j < size; j += 1) {
+      const pos = (i) * size + j;
+      const shadow = `${pos}px ${pos}px ${colors[i]}, `;
+      textShadow += shadow;
+    }
   }
-  shadowPos = shadowPos.slice(0, -2);
-  return shadowPos;
+  textShadow = textShadow.slice(0, -2);
+  return textShadow;
 };
 
-const perspectiveMotion = keyframes`
-  from {
-    text-shadow: ${perspective('-', '-')};
+const shadowAnimation = keyframes`
+  from,
+  19.9% {
+    text-shadow:
+      ${zebraShadow(5,
+    [blue, pink, yellow, red, green,
+      blue, pink, yellow, red, green])};
   }
 
-  25% {
-    text-shadow: ${perspective('', '-')};
+  20%,
+  39.9% {
+    text-shadow:
+      ${zebraShadow(5,
+    [green, blue, pink, yellow, red,
+      green, blue, pink, yellow, red])};
   }
 
-  50% {
-    text-shadow: ${perspective('', '')};
+  40%,
+  59.9% {
+    text-shadow:
+      ${zebraShadow(5,
+    [red, green, blue, pink, yellow,
+      red, green, blue, pink, yellow])};
   }
 
-  75% {
-    text-shadow: ${perspective('-', '')};
+  60%,
+  79.9% {
+    text-shadow:
+      ${zebraShadow(5,
+    [yellow, red, green, blue, pink,
+      yellow, red, green, blue, pink])};
   }
 
+  80%,
   to {
-    text-shadow: ${perspective('-', '-')};
+    text-shadow:
+      ${zebraShadow(5,
+    [pink, yellow, red, green, blue,
+      pink, yellow, red, green, blue])};
   }
 `;
 
@@ -57,24 +68,28 @@ const Wrapper = styled.div`
   align-items: center;
   height: 40rem;
   width: 100vw;
-  background-color: #1d0073;
+  background-color: #fff;
   overflow: hidden;
   position: relative;
 `;
 
 const Text = styled.span`
   font-size: 20rem;
-  text-transform: uppercase;
-  font-family: 'Passion One', cursive;
+  font-family: 'Parisienne', cursive;
   letter-spacing: 10px;
-  color: #ffd0f3;
-  animation: ${perspectiveMotion} 3s linear infinite;
+  z-index: 1;
+  color: transparent;
+  animation: ${shadowAnimation} 0.75s linear infinite;
 `;
 
-const BlockOne = () => (
+const BlockFour = () => (
   <Wrapper>
     <Text>Love</Text>
   </Wrapper>
 );
 
-export default BlockOne;
+BlockFour.defaultProps = {};
+
+BlockFour.propTypes = {};
+
+export default BlockFour;

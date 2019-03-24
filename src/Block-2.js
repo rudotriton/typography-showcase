@@ -1,25 +1,18 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const Flicker = color => keyframes`
-  0%,
-  19%,
-  21%,
-  23%,
-  25%,
-  54%,
-  56%,
-  100% {
-    text-shadow:
-      0 0 40px ${color},
-      0 0 40px ${color},
-      0 0 40px ${color},
-      0 0 10px ${color};
+const rotate = keyframes`
+  from {
+    transform:
+      rotate(0deg)
+      translate(-80px);
   }
 
-  20%,
-  24%,
-  55% { text-shadow: none; }
+  to {
+    transform:
+      rotate(360deg)
+      translate(-80px);
+  }
 `;
 
 const Wrapper = styled.div`
@@ -40,7 +33,15 @@ const Text = styled.span`
   letter-spacing: 10px;
   z-index: 1;
   color: #ead7de;
-  animation: ${Flicker('#ea2169')} 5s linear infinite;
+  text-shadow:
+    1px 1px #fff,
+    2px 2px #fff,
+    3px 3px #fff,
+    4px 4px #fff,
+    5px 5px #fff,
+    6px 6px #fff,
+    7px 7px #fff,
+    8px 8px #fff;
 `;
 
 const Circle = styled.div`
@@ -50,6 +51,7 @@ const Circle = styled.div`
   height: 1000rem;
   border-radius: 50rem;
   background: repeating-radial-gradient(circle farthest-side at center center, transparent, transparent 2.5rem, #1d0073 2.5rem, #1d0073 5rem);
+  animation: ${rotate} 8s linear infinite;
 `;
 
 const BlockTwo = () => (

@@ -1,64 +1,103 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const red = '#F40000';
-const green = '#04E762';
-const blue = '#2176FF';
-const yellow = '#FFBA00';
-const pink = '#DC0073';
+const colors1 = [
+  '#fe8ce2',
+  '#fe7fdf',
+  '#fc66d8',
+  '#fa4ed2',
+  '#f638cd',
+  '#f225c8',
+  '#ed15c4',
+  '#e707c1',
+  '#e000c0',
+  '#d700bf',
+  '#cd00bc',
+  '#c100b9',
+  '#b300a5',
+  '#9e00a5',
+  '#8a0096',
+  '#770087',
+];
 
-const zebraShadow = (size, colors) => {
-  let textShadow = '';
-  for (let i = 0; i < colors.length; i += 1) {
-    for (let j = 0; j < size; j += 1) {
-      const pos = (i) * size + j;
-      const shadow = `${pos}px ${pos}px ${colors[i]}, `;
-      textShadow += shadow;
-    }
+const colors2 = [
+  '#F2FAFF',
+  '#DEF2FE',
+  '#CBEAFE',
+  '#A4D8FC',
+  '#7EC6F9',
+  '#5DB3F5',
+  '#409FF1',
+  '#278AEB',
+  '#1375E4',
+  '#045EDB',
+  '#004CD0',
+  '#003BC4',
+  '#002BB6',
+  '#001BA7',
+  '#000F97',
+  '#000587',
+];
+
+
+const perspective = (x, y, colors) => {
+  let shadowPos = '';
+  for (let i = 1; i < colors.length; i += 1) {
+    shadowPos += `${x}${i}px ${y}${i}px ${colors[i]}, `;
   }
-  textShadow = textShadow.slice(0, -2);
-  return textShadow;
+  shadowPos = shadowPos.slice(0, -2);
+  return shadowPos;
 };
 
-const shadowAnimation = keyframes`
-  from,
-  19.9% {
-    text-shadow:
-      ${zebraShadow(5,
-    [blue, pink, yellow, red, green,
-      blue, pink, yellow, red, green])};
+const perspectiveMotion = keyframes`
+  from {
+    text-shadow: ${perspective('-', '-', colors1)};
   }
 
-  20%,
-  39.9% {
-    text-shadow:
-      ${zebraShadow(5,
-    [green, blue, pink, yellow, red,
-      green, blue, pink, yellow, red])};
+  12.5% {
+    text-shadow: ${perspective('', '-', colors1)};
   }
 
-  40%,
-  59.9% {
-    text-shadow:
-      ${zebraShadow(5,
-    [red, green, blue, pink, yellow,
-      red, green, blue, pink, yellow])};
+  25% {
+    text-shadow: ${perspective('', '', colors1)};
   }
 
-  60%,
-  79.9% {
-    text-shadow:
-      ${zebraShadow(5,
-    [yellow, red, green, blue, pink,
-      yellow, red, green, blue, pink])};
+  37.5% {
+    text-shadow: ${perspective('-', '', colors1)};
   }
 
-  80%,
+  50% {
+    text-shadow: ${perspective('-', '-', colors2)};
+  }
+
+  62.5% {
+    text-shadow: ${perspective('', '-', colors2)};
+  }
+
+  75% {
+    text-shadow: ${perspective('', '', colors2)};
+  }
+
+  87.5% {
+    text-shadow: ${perspective('-', '', colors2)};
+  }
+
   to {
-    text-shadow:
-      ${zebraShadow(5,
-    [pink, yellow, red, green, blue,
-      pink, yellow, red, green, blue])};
+    text-shadow: ${perspective('-', '-', colors1)};
+  }
+`;
+
+const rotate = keyframes`
+  from {
+    transform:
+      rotate(0deg)
+      /* translate(-80px); */
+  }
+
+  to {
+    transform:
+      rotate(360deg)
+      /* translate(-80px); */
   }
 `;
 
@@ -68,28 +107,39 @@ const Wrapper = styled.div`
   align-items: center;
   height: 40rem;
   width: 100vw;
-  background-color: #fff;
   overflow: hidden;
   position: relative;
 `;
 
-const Text = styled.span`
-  font-size: 20rem;
-  font-family: 'Parisienne', cursive;
-  letter-spacing: 10px;
-  z-index: 1;
-  color: transparent;
-  animation: ${shadowAnimation} 0.75s linear infinite;
+const Gradient = styled.div`
+  height: 200rem;
+  width: 200rem;
+  position: absolute;
+  z-index: -1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 68, 200, 1) 0%,
+      rgba(144, 0, 229, 1) 63%,
+      rgba(201, 0, 48, 1) 100%
+    );
+  animation: ${rotate} 20s linear infinite;
 `;
 
-const BlockFour = () => (
+const Text = styled.span`
+  font-size: 20rem;
+  text-transform: uppercase;
+  font-family: 'Passion One', cursive;
+  letter-spacing: 10px;
+  color: rgba(255, 255, 255, 0.8);
+  animation: ${perspectiveMotion} 3s linear infinite;
+`;
+
+const BlockOne = () => (
   <Wrapper>
+    <Gradient />
     <Text>Dreams</Text>
   </Wrapper>
 );
 
-BlockFour.defaultProps = {};
-
-BlockFour.propTypes = {};
-
-export default BlockFour;
+export default BlockOne;
