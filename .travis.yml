@@ -1,23 +1,13 @@
 language: node_js
 node_js:
-  - "12"
+  - '12'
 
 install:
   - npm ci
 
 cache:
   directories:
-    - "$HOME/.npm"
+    - '$HOME/.npm'
 
 script:
   - npx eslint ./src
-  - npm run build
-
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN # Set in the settings page of your repository, as a secure variable
-  local-dir: build
-  target-branch: gh-pages
-  on:
-    branch: master

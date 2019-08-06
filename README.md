@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://rudotriton.github.io/typography-showcase/">
+  <a href="https://typography-showcase.netlify.com">
     <img height="100" src="https://raw.githubusercontent.com/rudotriton/typography-showcase/master/ts-512x512.png">
   </a>
 </p>
