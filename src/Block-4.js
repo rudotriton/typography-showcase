@@ -87,20 +87,6 @@ const perspectiveMotion = keyframes`
   }
 `;
 
-const rotate = keyframes`
-  from {
-    transform:
-      rotate(0deg)
-      /* translate(-80px); */
-  }
-
-  to {
-    transform:
-      rotate(360deg)
-      /* translate(-80px); */
-  }
-`;
-
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -123,7 +109,6 @@ const Gradient = styled.div`
       rgba(144, 0, 229, 1) 63%,
       rgba(201, 0, 48, 1) 100%
     );
-  animation: ${rotate} 20s linear infinite;
 `;
 
 const Text = styled.span`
@@ -132,7 +117,7 @@ const Text = styled.span`
   font-family: 'Passion One', cursive;
   letter-spacing: 10px;
   color: rgba(255, 255, 255, 0.8);
-  animation: ${perspectiveMotion} 3s linear infinite;
+  animation: ${perspectiveMotion} 6s linear infinite;
 `;
 
 const BlockOne = () => (
