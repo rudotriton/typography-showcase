@@ -82,7 +82,7 @@ const Text = styled.span`
   animation: ${shadowAnimation} 0.75s linear infinite;
 `;
 
-export const BlockOne = () => (
+const BlockOne = () => (
   <Wrapper>
     <Text>Love</Text>
   </Wrapper>
@@ -92,4 +92,4 @@ BlockOne.defaultProps = {};
 
 BlockOne.propTypes = {};
 
-// export default BlockOne;
+export default BlockOne;
