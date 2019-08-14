@@ -1,0 +1,9 @@
+name: Merge to master
+on: pull_request
+resolves = [automerge]
+
+jobs:
+  merge:
+    name: Merge pull requests
+    steps:
+      - uses: pascalgn/automerge-action@v0.2.4
