@@ -1,5 +1,6 @@
 name: Lint, label, merge
 on: pull_request
+secrets: ['GITHUB_TOKEN']
 
 jobs:
   lint:
