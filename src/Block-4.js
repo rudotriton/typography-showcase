@@ -120,11 +120,11 @@ const Text = styled.span`
   animation: ${perspectiveMotion} 6s linear infinite;
 `;
 
-const BlockOne = () => (
+const BlockFour = () => (
   <Wrapper>
     <Gradient />
     <Text>Dreams</Text>
   </Wrapper>
 );
 
-export default BlockOne;
+export default BlockFour;
