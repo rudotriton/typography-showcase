@@ -1,0 +1,12 @@
+name: Merge
+on: pull_request
+
+jobs:
+  merge:
+    name: Merge pull requests
+    runs-on: ubuntu-latest
+    needs: label
+    steps:
+      - uses: pascalgn/automerge-action@v0.2.4
+        env:
+          GITHUB_TOKEN: 'pull requests'
