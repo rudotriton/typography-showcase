@@ -7,3 +7,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: pascalgn/automerge-action@v0.2.4
+        env:
+          GITHUB_TOKEN: 'f10a48d7676fa056ca789196cc94435a0f66cad0'
