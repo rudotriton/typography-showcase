@@ -9,6 +9,6 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          node-version: '12.8.0'
+          node-version: '12.x'
           - run: npm install
           - run: npx eslint src/
