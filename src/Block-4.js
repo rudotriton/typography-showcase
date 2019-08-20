@@ -112,7 +112,7 @@ const Gradient = styled.div`
 `;
 
 const Text = styled.span`
-  font-size: 20rem;
+  font-size: 13rem;
   text-transform: uppercase;
   font-family: 'Passion One', cursive;
   letter-spacing: 10px;
