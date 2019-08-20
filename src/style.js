@@ -1,16 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
+import media from './util/mediaQueries';
 
 export const GlobalStyle = createGlobalStyle`
   html {
     font-size: 62.5%;
-
-    @media only screen and (max-width: ${props => props.theme.bpMedium}) {
+    ${media.tablet`
       font-size: 56.25%;
-    }
-
-    @media only screen and (max-width: ${props => props.theme.bpSmall}) {
-      font-size: 32%;
-    }
+    `}
+    ${media.phone`
+      font-size: 45%;
+    `}
   }
 
   body {
@@ -26,6 +25,4 @@ export const GlobalStyle = createGlobalStyle`
 export const theme = {
   black: '#111',
   white: '#fefefe',
-  bpMedium: '768px',
-  bpSmall: '500px',
 };
