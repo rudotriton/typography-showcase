@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const wave1 = keyframes`
+const appear1 = keyframes`
   0%,
   24% {
     opacity: 0;
@@ -13,7 +13,7 @@ const wave1 = keyframes`
   }
 `;
 
-const wave2 = keyframes`
+const appear2 = keyframes`
   0%,
   49% {
     opacity: 0;
@@ -25,7 +25,7 @@ const wave2 = keyframes`
   }
 `;
 
-const wave3 = keyframes`
+const appear3 = keyframes`
   0%,
   74% {
     opacity: 0;
@@ -59,17 +59,17 @@ const Text1 = styled.span`
 const Text2 = styled.span`
   transform: translate(-40%, -60%);
   color: rgba(242, 219, 164, 0.6);
-  animation: ${wave1} 4s linear infinite;
+  animation: ${appear1} 4s linear infinite;
 `;
 const Text3 = styled.span`
   transform: translate(-30%, -70%);
   color: rgba(242, 219, 164, 0.4);
-  animation: ${wave2} 4s linear infinite;
+  animation: ${appear2} 4s linear infinite;
 `;
 const Text4 = styled.span`
   transform: translate(-20%, -80%);
   color: rgba(242, 219, 164, 0.2);
-  animation: ${wave3} 4s linear infinite;
+  animation: ${appear3} 4s linear infinite;
 `;
 
 const BlockOne = () => (
