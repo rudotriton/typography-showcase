@@ -19,15 +19,15 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40rem;
-  width: 100vw;
+  height: 20rem;
+  width: 50vw;
   background-color: #ea2169;
   overflow: hidden;
   position: relative;
 `;
 
 const Text = styled.span`
-  font-size: 20rem;
+  font-size: 10rem;
   text-transform: uppercase;
   font-family: 'Chela One', cursive;
   letter-spacing: 10px;

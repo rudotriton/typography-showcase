@@ -1,21 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { GlobalStyle, theme } from './style';
-import BlockOne from './Block-1';
-import BlockTwo from './Block-2';
-import BlockThree from './Block-3';
-import BlockFour from './Block-4';
+import BlockOne from './components/Block-1';
+import BlockTwo from './components/Block-2';
+import BlockThree from './components/Block-3';
+import BlockFour from './components/Block-4';
+import BlockFive from './components/Block-5';
 import 'normalize.css';
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
 
 const root = (
   <ThemeProvider theme={theme}>
     <>
       <GlobalStyle />
-      <BlockOne />
-      <BlockTwo />
-      <BlockThree />
-      <BlockFour />
+      <Wrapper>
+        <BlockOne />
+        <BlockTwo />
+        <BlockThree />
+        <BlockFour />
+        <BlockFive />
+      </Wrapper>
     </>
   </ThemeProvider>
 );

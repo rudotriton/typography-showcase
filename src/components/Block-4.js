@@ -91,15 +91,15 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40rem;
-  width: 100vw;
+  height: 20rem;
+  width: 50vw;
   overflow: hidden;
   position: relative;
 `;
 
 const Gradient = styled.div`
-  height: 200rem;
-  width: 200rem;
+  height: 100rem;
+  width: 100rem;
   position: absolute;
   z-index: -1;
   background:
@@ -112,9 +112,9 @@ const Gradient = styled.div`
 `;
 
 const Text = styled.span`
-  font-size: 13rem;
+  font-size: 10rem;
   text-transform: uppercase;
-  font-family: 'Passion One', cursive;
+  font-family: 'Passion One', sans-serif;
   letter-spacing: 10px;
   color: rgba(255, 255, 255, 0.8);
   animation: ${perspectiveMotion} 6s linear infinite;

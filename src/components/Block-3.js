@@ -19,8 +19,8 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40rem;
-  width: 100vw;
+  height: 20rem;
+  width: 50vw;
   background-color: #2ac2ff;
   overflow: hidden;
   position: relative;
@@ -35,7 +35,7 @@ const Rays = styled.div`
 `;
 
 const Text = styled.span`
-  font-size: 15rem;
+  font-size: 10rem;
   font-family: 'Pacifico', cursive;
   letter-spacing: 10px;
   z-index: 1;

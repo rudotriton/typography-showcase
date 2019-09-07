@@ -66,15 +66,15 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 40rem;
-  width: 100vw;
+  height: 20rem;
+  width: 50vw;
   background-color: #fff;
   overflow: hidden;
   position: relative;
 `;
 
 const Text = styled.span`
-  font-size: 20rem;
+  font-size: 10rem;
   font-family: 'Parisienne', cursive;
   letter-spacing: 10px;
   z-index: 1;
