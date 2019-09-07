@@ -7,11 +7,17 @@ import BlockTwo from './components/Block-2';
 import BlockThree from './components/Block-3';
 import BlockFour from './components/Block-4';
 import BlockFive from './components/Block-5';
+import BlockSix from './components/Block-6';
 import 'normalize.css';
+import media from './util/mediaQueries';
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-auto-rows: 40rem;
+  ${media.widelet`
+    grid-template-columns: 100%;
+  `}
 `;
 
 const root = (
@@ -24,6 +30,7 @@ const root = (
         <BlockThree />
         <BlockFour />
         <BlockFive />
+        <BlockSix />
       </Wrapper>
     </>
   </ThemeProvider>

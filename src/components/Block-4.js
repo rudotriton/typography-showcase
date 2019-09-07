@@ -91,8 +91,6 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 20rem;
-  width: 50vw;
   overflow: hidden;
   position: relative;
 `;

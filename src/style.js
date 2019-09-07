@@ -16,9 +16,9 @@ export const GlobalStyle = createGlobalStyle`
     background-color: #000;
     font-family: sans-serif;
 
-    /* &::-webkit-scrollbar {
+    &::-webkit-scrollbar {
       width: 0;
-    } */
+    }
   }
 `;
 

@@ -31,11 +31,9 @@ const Wrapper = styled.div`
   align-items: center;
   background-color: #000;
   display: flex;
-  height: 20rem;
   justify-content: center;
   overflow: hidden;
   position: relative;
-  width: 50vw;
 `;
 
 const Text = styled.span`
