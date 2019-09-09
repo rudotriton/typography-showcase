@@ -9,6 +9,7 @@ import BlockFour from './components/Block-4';
 import BlockFive from './components/Block-5';
 import BlockSix from './components/Block-6';
 import BlockSeven from './components/Block-7';
+import BlockEight from './components/Block-8';
 import 'normalize.css';
 import media from './util/mediaQueries';
 
@@ -33,6 +34,7 @@ const root = (
         <BlockFive />
         <BlockSix />
         <BlockSeven />
+        <BlockEight />
       </Wrapper>
     </>
   </ThemeProvider>
