@@ -6,4 +6,6 @@
 
 <h2 align="center"><strong>Typography Showcase</strong></h2>
 
-Just a repo for some css and animations.
+Just a repo for some typography and animations.
+
+![Love](typography-showcase.gif)
