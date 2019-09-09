@@ -40,6 +40,7 @@ const appear3 = keyframes`
 const Wrapper = styled.div`
   background-color: #1b1b1b;
   position: relative;
+  overflow: hidden;
 
   & > span {
     font-family: 'Pacifico', cursive;
