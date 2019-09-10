@@ -3,15 +3,27 @@ import styled, { keyframes } from 'styled-components';
 import media from '../util/mediaQueries';
 
 const appear = keyframes`
-  0%,
-  75%,
-  100% {
+  0% {
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+
+  20% {
+    text-shadow: 6px 3px 0 rgba(0, 0, 0, 0.6);
+    opacity: 1;
+  }
+
+  60% {
+    text-shadow: 6px 3px 0 rgba(0, 0, 0, 0.6);
+    opacity: 1;
+  }
+
+  65% {
     opacity: 0;
   }
 
-  20%,
-  65% {
-    opacity: 1;
+  100% {
+    opacity: 0;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
 `;
 
@@ -43,7 +55,7 @@ const Wrapper = styled.div`
 const Text = styled.span`
   color: #f2dba4;
   letter-spacing: 0.08em;
-  text-shadow: 6px 3px 0 rgba(0, 0, 0, 0.6);
+  /* text-shadow: 6px 3px 0 rgba(0, 0, 0, 0.6); */
   animation: ${appear} 8s linear infinite;
 `;
 
@@ -74,12 +86,12 @@ const Waves = styled.div`
 
   & > .one {
     animation: ${rotate} 7000ms infinite linear;
-    background: rgba(0, 160, 255, 0.7);
+    background: rgba(0, 160, 255, 0.6);
   }
 
   & > .two {
     animation: ${rotate} 3000ms infinite linear;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.3);
   }
 
   & > .three {
