@@ -3,12 +3,14 @@ import styled, { keyframes } from 'styled-components';
 
 const scan = keyframes`
   0%,
+  5%,
+  95%,
   100% {
     clip-path: polygon(20% 0, 20% 0, 20% 100%, 20% 100%);
   }
 
   10%,
-  95% {
+  90% {
     clip-path: polygon(15% 0, 25% 0, 25% 100%, 15% 100%);
   }
 
