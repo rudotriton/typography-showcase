@@ -75,10 +75,7 @@ const vertigo4 = keyframes`
 
 
 const Wrapper = styled.div`
-  align-items: center;
   background-color: #3139d9;
-  display: flex;
-  justify-content: center;
   position: relative;
 
   span {
