@@ -6,53 +6,43 @@ const scan = keyframes`
   5%,
   95%,
   100% {
-    clip-path: polygon(20% 0, 20% 0, 20% 100%, 20% 100%);
+    left: 20%;
+    width: 0;
   }
 
   10%,
   90% {
-    clip-path: polygon(15% 0, 25% 0, 25% 100%, 15% 100%);
+    left: 15%;
+    width: 100px;
   }
 
   23%,
   60%,
   72% {
-    clip-path: polygon(80% 0, 90% 0, 90% 100%, 80% 100%);
+    left: 80%;
   }
 
   44%,
   65%,
   80% {
-    clip-path: polygon(35% 0, 45% 0, 45% 100%, 35% 100%);
+    left: 35%;
   }
 
   50%,
   70% {
-    clip-path: polygon(75% 0, 85% 0, 85% 100%, 75% 100%);
+    left: 75%;
   }
 `;
 
-const One = styled.div`
-  position: absolute;
+const Wrapper = styled.div`
   align-items: center;
+  position: relative;
   flex-direction: column;
   display: flex;
   justify-content: center;
   height: 100%;
   width: 100%;
   background: #000;
-`;
-
-const Two = styled.div`
-  position: absolute;
-  align-items: center;
-  flex-direction: column;
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  width: 100%;
-  background: #fff;
-  animation: ${scan} 5s linear infinite;
 `;
 
 const Text = styled.span`
@@ -68,56 +58,36 @@ const Text = styled.span`
   text-transform: uppercase;
 `;
 
-const Text2 = styled.span`
-  font-family: 'Anton', sans-serif;
-  color: #fff;
-  font-size: 10rem;
-  text-shadow:
-    -1px -1px #000,
-    1px -1px #000,
-    1px 1px #000,
-    -1px 1px #000,
-    0 1rem #000;
-  text-transform: uppercase;
+const Overlay = styled.div`
+  position: absolute;
+  background-color: white;
+  left: 50%;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  mix-blend-mode: difference;
+  animation: ${scan} 5s linear infinite;
 `;
 
 const BlockOne = () => (
-  <div style={{ position: 'relative' }}>
-    <One>
-      <Text style={{
-        marginBottom: '-1.35rem',
-        letterSpacing: '-0.04em',
-      }}
-      >
+  <Wrapper>
+    <Text style={{
+      marginBottom: '-1.35rem',
+      letterSpacing: '-0.04em',
+    }}
+    >
       My Strange
-      </Text>
-      <Text style={{
-        marginTop: '-1.35rem',
-        marginLeft: '1.1rem',
-        letterSpacing: '0.066em',
-      }}
-      >
+    </Text>
+    <Text style={{
+      marginTop: '-1.35rem',
+      marginLeft: '1.1rem',
+      letterSpacing: '0.066em',
+    }}
+    >
       Addiction
-      </Text>
-    </One>
-    <Two>
-      <Text2 style={{
-        marginBottom: '-1.35rem',
-        letterSpacing: '-0.04em',
-      }}
-      >
-      My Strange
-      </Text2>
-      <Text2 style={{
-        marginTop: '-1.35rem',
-        marginLeft: '1.1rem',
-        letterSpacing: '0.066em',
-      }}
-      >
-      Addiction
-      </Text2>
-    </Two>
-  </div>
+    </Text>
+    <Overlay />
+  </Wrapper>
 );
 
 BlockOne.defaultProps = {};
