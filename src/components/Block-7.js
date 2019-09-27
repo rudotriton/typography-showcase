@@ -100,7 +100,7 @@ const Waves = styled.div`
   }
 `;
 
-const BlockOne = () => (
+const BlockSeven = () => (
   <Wrapper>
     <Text>Beaches</Text>
     <Waves>
@@ -111,8 +111,4 @@ const BlockOne = () => (
   </Wrapper>
 );
 
-BlockOne.defaultProps = {};
-
-BlockOne.propTypes = {};
-
-export default BlockOne;
+export default BlockSeven;

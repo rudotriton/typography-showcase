@@ -57,14 +57,10 @@ const Text = styled.span`
   }
 `;
 
-const BlockOne = () => (
+const BlockFive = () => (
   <Wrapper>
     <Text>Manic</Text>
   </Wrapper>
 );
 
-BlockOne.defaultProps = {};
-
-BlockOne.propTypes = {};
-
-export default BlockOne;
+export default BlockFive;

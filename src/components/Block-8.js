@@ -111,7 +111,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const BlockOne = () => (
+const BlockEight = () => (
   <Wrapper>
     <span className="main">Vertigo</span>
     <span className="one">Vertigo</span>
@@ -121,8 +121,4 @@ const BlockOne = () => (
   </Wrapper>
 );
 
-BlockOne.defaultProps = {};
-
-BlockOne.propTypes = {};
-
-export default BlockOne;
+export default BlockEight;

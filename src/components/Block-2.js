@@ -59,8 +59,4 @@ const BlockTwo = () => (
   </Wrapper>
 );
 
-BlockTwo.defaultProps = {};
-
-BlockTwo.propTypes = {};
-
 export default BlockTwo;

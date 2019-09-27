@@ -86,8 +86,4 @@ const BlockOne = () => (
   </Wrapper>
 );
 
-BlockOne.defaultProps = {};
-
-BlockOne.propTypes = {};
-
 export default BlockOne;

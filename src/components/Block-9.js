@@ -70,7 +70,7 @@ const Overlay = styled.div`
   animation: ${scan} 5s linear infinite;
 `;
 
-const BlockOne = () => (
+const BlockNine = () => (
   <Wrapper>
     <Text style={{
       marginBottom: '-1.35rem',
@@ -91,8 +91,4 @@ const BlockOne = () => (
   </Wrapper>
 );
 
-BlockOne.defaultProps = {};
-
-BlockOne.propTypes = {};
-
-export default BlockOne;
+export default BlockNine;

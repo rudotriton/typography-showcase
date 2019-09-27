@@ -73,7 +73,7 @@ const Text4 = styled.span`
   animation: ${appear3} 4s linear infinite;
 `;
 
-const BlockOne = () => (
+const BlockSix = () => (
   <Wrapper>
     <Text1>Bel Air</Text1>
     <Text2>Bel Air</Text2>
@@ -82,8 +82,4 @@ const BlockOne = () => (
   </Wrapper>
 );
 
-BlockOne.defaultProps = {};
-
-BlockOne.propTypes = {};
-
-export default BlockOne;
+export default BlockSix;

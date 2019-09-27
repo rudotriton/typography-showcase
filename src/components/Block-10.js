@@ -76,7 +76,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const BlockOne = () => (
+const BlockTen = () => (
   <Wrapper>
     <span className="red">ilomilo</span>
     <span className="green">ilomilo</span>
@@ -84,8 +84,4 @@ const BlockOne = () => (
   </Wrapper>
 );
 
-BlockOne.defaultProps = {};
-
-BlockOne.propTypes = {};
-
-export default BlockOne;
+export default BlockTen;

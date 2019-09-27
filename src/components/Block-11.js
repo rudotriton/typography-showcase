@@ -80,7 +80,7 @@ const Two = styled.span`
   animation: ${second} 4s linear infinite;
 `;
 
-const BlockOne = () => (
+const BlockEleven = () => (
   <Wrapper>
     <Text>
       <One>Bang</One>
@@ -92,8 +92,4 @@ const BlockOne = () => (
   </Wrapper>
 );
 
-BlockOne.defaultProps = {};
-
-BlockOne.propTypes = {};
-
-export default BlockOne;
+export default BlockEleven;

@@ -48,8 +48,4 @@ const BlockThree = () => (
   </Wrapper>
 );
 
-BlockThree.defaultProps = {};
-
-BlockThree.propTypes = {};
-
 export default BlockThree;
