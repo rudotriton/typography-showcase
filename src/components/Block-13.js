@@ -1,11 +1,59 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
+const rotate = keyframes`
+  0%,
+  40% {
+    transform: rotate(0deg);
+  }
+
+  50%,
+  90% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+`;
+const sunMoonRotate = keyframes`
+  0%,
+  40% {
+    transform: rotate(0deg) translate(-50%, -50%);
+  }
+
+  50%,
+  90% {
+    transform: rotate(180deg) translate(50%, 50%);
+  }
+
+  100% {
+    transform: rotate(360deg) translate(-50%, -50%);
+  }
+`;
+
+const smoothOcean = keyframes`
+  0%,
+  40% {
+    background: #1B46EF;
+  }
+
+  50%,
+  90% {
+    background: #030733;
+  }
+
+  100% {
+    background: #1B46EF;
+  }
+`;
+
 const Wrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 `;
 
 const Horizon = styled.div`
@@ -19,18 +67,25 @@ const Horizon = styled.div`
     );
   height: 100%;
   width: 100%;
-  transform: rotate(180deg);
+  animation: ${rotate} 8s ease-in-out infinite;
 `;
 
 const SunMoon = styled.div`
-  background: linear-gradient(0deg, #FF9A15 9.17%, #FF7715 22.89%, #F41D1D 50%, #FFFDEA 50.01%);
+  background:
+    linear-gradient(
+      180deg,
+      #ff9a15 9.17%,
+      #ff7715 22.89%,
+      #f41d1d 50%,
+      #fffdea 50.01%
+    );
   height: 20rem;
   width: 20rem;
   position: absolute;
   left: 50%;
   top: 50%;
   border-radius: 10rem;
-  transform: translate(-50%, -50%);
+  animation: ${sunMoonRotate} 8s ease-in-out infinite;
 `;
 
 const Sea = styled.div`
@@ -39,17 +94,19 @@ const Sea = styled.div`
   width: 100%;
   top: 50%;
   background: #e5326a;
+  animation: ${smoothOcean} 8s ease-in-out infinite;
 `;
 
 const Text = styled.span`
-  font-family: 'Chela One', sans-serif;
+  font-family: 'Pacifico', cursive;
+  mix-blend-mode: exclusion;
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -65%);
   font-size: 10rem;
-  color: white;
   z-index: 10;
+  color: #FF2100;
 `;
 
 const BlockTwelve = () => (
