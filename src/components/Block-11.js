@@ -40,19 +40,21 @@ const colors = [
   '#660000',
 ];
 
-const shadowGen = (start, step) => {
+const shadowGen = (start, step, iterations) => {
   let shadow = '';
   let pos = start;
   colors.forEach((color) => {
-    shadow += `${pos}px ${pos}px 0 ${color}, `;
-    pos += step;
+    for (let i = 0; i < iterations; i += 1) {
+      shadow += `${pos}px ${pos}px 0 ${color}, `;
+      pos += step;
+    }
   });
   shadow = shadow.slice(0, -2);
   return shadow;
 };
 
 const Wrapper = styled.div`
-  background-color: #000;
+  background-color: #fff;
   position: relative;
   display: flex;
   justify-content: center;
@@ -66,14 +68,14 @@ const Text = styled.span`
   text-transform: uppercase;
   line-height: 9rem;
   letter-spacing: -3rem;
-  text-shadow: ${shadowGen(0, 2)};
+  text-shadow: ${shadowGen(0, 0.25, 8)};
   color: transparent;
   padding: 5rem;
 `;
 
 const One = styled.span`
-  opacity: 0;
-  animation: ${first} 4s linear infinite;
+  opacity: 1;
+  /* animation: ${first} 4s linear infinite; */
 `;
 const Two = styled.span`
   opacity: 0;
