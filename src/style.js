@@ -4,8 +4,11 @@ import media from './util/mediaQueries';
 export const GlobalStyle = createGlobalStyle`
   html {
     font-size: 62.5%;
-    ${media.tablet`
-      font-size: 56.25%;
+    ${media.desktop`
+      font-size: 50%;
+    `}
+    ${media.widelet`
+      font-size: 56%;
     `}
     ${media.phone`
       font-size: 45%;
