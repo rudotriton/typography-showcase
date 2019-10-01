@@ -23,7 +23,7 @@ const Flicker = color => keyframes`
 `;
 
 const Wrapper = styled.div`
-  background-color: #000;
+  background-color: #06003a;
   position: relative;
   display: flex;
   justify-content: center;
