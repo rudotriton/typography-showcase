@@ -26,6 +26,6 @@ export const GlobalStyle = createGlobalStyle`
 `;
 
 export const theme = {
-  black: '#111',
-  white: '#fefefe',
+  black: '#000',
+  white: '#ffff',
 };
