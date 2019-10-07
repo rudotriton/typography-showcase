@@ -1,51 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, theme } from './style';
-import BlockOne from './components/Block-1';
-import BlockTwo from './components/Block-2';
-import BlockThree from './components/Block-3';
-import BlockFour from './components/Block-4';
-import BlockFive from './components/Block-5';
-import BlockSix from './components/Block-6';
-import BlockSeven from './components/Block-7';
-import BlockEight from './components/Block-8';
-import BlockNine from './components/Block-9';
-import BlockTen from './components/Block-10';
-import BlockEleven from './components/Block-11';
-import BlockTwelve from './components/Block-12';
-import BlockThirteen from './components/Block-13';
 import 'normalize.css';
-import media from './util/mediaQueries';
-
-const Wrapper = styled.div`
-  display: grid;
-  grid-template-columns: 50vw 50vw;
-  grid-auto-rows: 40rem;
-  ${media.widelet`
-    grid-template-columns: 100%;
-  `}
-`;
+import AppRouter from './router/AppRouter';
 
 const root = (
   <ThemeProvider theme={theme}>
     <>
       <GlobalStyle />
-      <Wrapper>
-        <BlockOne />
-        <BlockTwo />
-        <BlockThree />
-        <BlockFour />
-        <BlockFive />
-        <BlockSix />
-        <BlockSeven />
-        <BlockEight />
-        <BlockNine />
-        <BlockTen />
-        <BlockEleven />
-        <BlockTwelve />
-        <BlockThirteen />
-      </Wrapper>
+      <AppRouter />
     </>
   </ThemeProvider>
 );
