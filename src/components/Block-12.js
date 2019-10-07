@@ -34,7 +34,7 @@ const Text = styled.span`
   font-family: 'Pacifico', cursive;
   font-size: 8rem;
   color: white;
-  animation: ${Flicker('#00FFF0')} 2s alternate infinite;
+  animation: ${Flicker('#00FFF0')} 4s alternate infinite;
 `;
 
 const BlockTwelve = () => (
