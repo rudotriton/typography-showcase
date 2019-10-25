@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   background: ${p => p.theme.black};
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
 `;
 
 const Button = styled.button`
@@ -45,6 +45,7 @@ const Page = styled.span`
   font-size: 3rem;
   font-family: 'Inter', sans-serif;
   color: ${p => p.theme.white};
+  margin: 0 4rem;
 `;
 
 const Pager = () => {
