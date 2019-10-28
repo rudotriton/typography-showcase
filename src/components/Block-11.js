@@ -66,30 +66,32 @@ const Text = styled.span`
   font-size: 14rem;
   font-weight: 900;
   text-transform: uppercase;
-  line-height: 9rem;
   letter-spacing: -3rem;
   text-shadow: ${shadowGen(0, 0.25, 8)};
   color: transparent;
   padding: 5rem;
+  position: relative;
 `;
 
 const One = styled.span`
   opacity: 1;
-  /* animation: ${first} 4s linear infinite; */
+  animation: ${first} 4s linear infinite;
+  position: absolute;
+  transform: translate(-70%, -70%);
 `;
+
 const Two = styled.span`
   opacity: 0;
   animation: ${second} 4s linear infinite;
+  position: absolute;
+  transform: translate(-50%, -13%);
 `;
 
 const BlockEleven = () => (
   <Wrapper>
     <Text>
       <One>Bang</One>
-      <br />
-      <Two>
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bang
-      </Two>
+      <Two>Bang</Two>
     </Text>
   </Wrapper>
 );
