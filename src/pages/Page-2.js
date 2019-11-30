@@ -9,11 +9,11 @@ import BlockSixteen from '../components/Block-16';
 
 const PageTwo = () => (
   <Wrapper>
-    {/* <BlockEleven />
+    <BlockEleven />
     <BlockTwelve />
     <BlockThirteen />
     <BlockFourteen />
-    <BlockFifteen /> */}
+    <BlockFifteen />
     <BlockSixteen />
   </Wrapper>
 );
