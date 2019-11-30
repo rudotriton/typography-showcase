@@ -89,11 +89,11 @@ const Text = styled.span`
   }
 `;
 
-const BlockTwelve = () => (
+const BlockSixteen = () => (
   <Wrapper>
     <Text>Enemy</Text>
     <Text>Lines</Text>
   </Wrapper>
 );
 
-export default BlockTwelve;
+export default BlockSixteen;
