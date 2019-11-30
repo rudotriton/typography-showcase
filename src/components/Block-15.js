@@ -85,6 +85,7 @@ const Text = styled.span`
   letter-spacing: -0.5rem;
   width: fit-content;
   position: absolute;
+  text-transform: uppercase;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
