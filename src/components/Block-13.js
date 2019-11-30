@@ -109,7 +109,7 @@ const Text = styled.span`
   color: #FF2100;
 `;
 
-const BlockTwelve = () => (
+const BlockThirteen = () => (
   <Wrapper>
     <Horizon />
     <Text>Change</Text>
@@ -118,8 +118,4 @@ const BlockTwelve = () => (
   </Wrapper>
 );
 
-BlockTwelve.defaultProps = {};
-
-BlockTwelve.propTypes = {};
-
-export default BlockTwelve;
+export default BlockThirteen;

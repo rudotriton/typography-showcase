@@ -5,14 +5,16 @@ import BlockTwelve from '../components/Block-12';
 import BlockThirteen from '../components/Block-13';
 import BlockFourteen from '../components/Block-14';
 import BlockFifteen from '../components/Block-15';
+import BlockSixteen from '../components/Block-16';
 
 const PageTwo = () => (
   <Wrapper>
-    <BlockEleven />
+    {/* <BlockEleven />
     <BlockTwelve />
     <BlockThirteen />
     <BlockFourteen />
-    <BlockFifteen />
+    <BlockFifteen /> */}
+    <BlockSixteen />
   </Wrapper>
 );
 

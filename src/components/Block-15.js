@@ -97,30 +97,22 @@ const Block = styled.div`
   animation: ${p => p.anim} 5s linear infinite;
 `;
 
-const BlockTwelve = () => {
+const BlockFifteen = () => {
   const generateBlocks = () => {
     const blocks = [];
     const animations = [Extend1, Extend2, Extend3, Extend4, Extend5];
     for (let i = 0; i <= 4; i += 1) {
-      blocks.push(
-        <Block key={i} anim={animations[i]} />,
-      );
+      blocks.push(<Block key={i} anim={animations[i]} />);
     }
     return blocks;
   };
 
   return (
     <Wrapper>
-      {
-        generateBlocks()
-      }
+      {generateBlocks()}
       <Text>Game Over</Text>
     </Wrapper>
   );
 };
 
-BlockTwelve.defaultProps = {};
-
-BlockTwelve.propTypes = {};
-
-export default BlockTwelve;
+export default BlockFifteen;
