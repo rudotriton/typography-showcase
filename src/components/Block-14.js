@@ -28,7 +28,7 @@ const Text = styled.span`
   animation: ${wave} 8s ease-in-out ${p => p.delay}s infinite;
 `;
 
-const BlockTwelve = () => {
+const BlockFourteen = () => {
   const generateWaves = () => {
     const waves = [];
     for (let i = 1; i < 50; i += 1) {
@@ -47,4 +47,4 @@ const BlockTwelve = () => {
   );
 };
 
-export default BlockTwelve;
+export default BlockFourteen;
