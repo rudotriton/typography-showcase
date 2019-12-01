@@ -40,6 +40,7 @@ const SlideFromRight = keyframes`
 const Wrapper = styled.div`
   background-color: #ffcd00;
   position: relative;
+  overflow: hidden;
 `;
 
 const Text = styled.span`
