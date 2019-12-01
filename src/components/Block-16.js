@@ -1,63 +1,39 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const Rotate1 = keyframes`
+const SlideFromLeft = keyframes`
   0% {
-    z-index: 2;
-    transform: translate(-50%, -50%) scale(1.2);
+    right: 100%;
   }
 
-  25% {
-    transform: translate(-50%, -100%) scale(1);
-    z-index: 1;
+  15% {
+    right: 30%;
   }
 
-  50% {
-    z-index: 1;
-    transform: translate(-50%, -50%) scale(0.8);
-  }
-
-  74% {
-    z-index: 1;
-  }
-
-  75% {
-    z-index: 2;
-    transform: translate(-50%, 0) scale(1);
+  85% {
+    right: 25%;
   }
 
   100% {
-    transform: translate(-50%, -50%) scale(1.2);
-    z-index: 2;
+    right: -100%;
   }
 `;
 
-const Rotate2 = keyframes`
+const SlideFromRight = keyframes`
   0% {
-    transform: translate(-50%, -50%) scale(0.8);
-    z-index: 1;
+    left: 100%;
   }
 
-  25% {
-    transform: translate(-50%, 0) scale(1);
+  15% {
+    left: 30%;
   }
 
-  50% {
-    z-index: 2;
-    transform: translate(-50%, -50%) scale(1.2);
-  }
-
-  51% {
-    z-index: 1;
-  }
-
-  75% {
-    transform: translate(-50%, -100%) scale(1);
+  85% {
+    left: 25%;
   }
 
   100% {
-    transform: translate(-50%, -50%) scale(0.8);
-    z-index: 1;
+    left: -100%;
   }
 `;
 
@@ -74,18 +50,17 @@ const Text = styled.span`
   width: fit-content;
   font-style: italic;
   text-transform: uppercase;
-  line-height: 7rem;
+  letter-spacing: 0.5rem;
   text-shadow: 0.5rem 0.5rem 0 #ef044d, 2rem 2rem 0 #000;
   -webkit-text-stroke: 2px #fff;
-  animation: ${Rotate2} 4s linear infinite;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 35%;
+  animation: ${SlideFromRight} 2s linear infinite;
   padding: 5rem;
 
   &:first-of-type {
-    animation: ${Rotate1} 4s linear infinite;
+    animation: ${SlideFromLeft} 2s linear infinite;
+    top: 10%;
   }
 `;
 
