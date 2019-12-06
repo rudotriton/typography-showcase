@@ -6,7 +6,7 @@ const Extend1 = keyframes`
     width: 0%;
   }
 
-  15%,
+  10%,
   100% {
     width: 100%;
   }
@@ -14,7 +14,19 @@ const Extend1 = keyframes`
 
 const Extend2 = keyframes`
   0%,
-  15% {
+  10% {
+    width: 0%;
+  }
+
+  20%,
+  100% {
+    width: 100%;
+  }
+`;
+
+const Extend3 = keyframes`
+  0%,
+  20% {
     width: 0%;
   }
 
@@ -24,25 +36,13 @@ const Extend2 = keyframes`
   }
 `;
 
-const Extend3 = keyframes`
+const Extend4 = keyframes`
   0%,
   30% {
     width: 0%;
   }
 
-  45%,
-  100% {
-    width: 100%;
-  }
-`;
-
-const Extend4 = keyframes`
-  0%,
-  45% {
-    width: 0%;
-  }
-
-  60%,
+  40%,
   100% {
     width: 100%;
   }
@@ -50,11 +50,11 @@ const Extend4 = keyframes`
 
 const Extend5 = keyframes`
   0%,
-  60% {
+  40% {
     width: 0%;
   }
 
-  75%,
+  50%,
   100% {
     width: 100%;
   }
@@ -62,12 +62,14 @@ const Extend5 = keyframes`
 
 const Appear = keyframes`
   0%,
-  80% {
+  60%,
+  95%,
+  100% {
     opacity: 0;
   }
 
-  81%,
-  100% {
+  61%,
+  85% {
     opacity: 1;
   }
 `;
@@ -89,13 +91,13 @@ const Text = styled.span`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: ${Appear} 5s linear infinite;
+  animation: ${Appear} 6s linear infinite;
 `;
 
 const Block = styled.div`
   height: 20%;
   background-color: #000;
-  animation: ${p => p.anim} 5s linear infinite;
+  animation: ${p => p.anim} 6s linear infinite;
 `;
 
 const BlockFifteen = () => {
