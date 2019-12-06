@@ -3,26 +3,24 @@ import styled, { keyframes } from 'styled-components';
 
 const first = keyframes`
   0%,
-  40%,
-  100% {
+  40% {
     opacity: 0;
   }
 
   41%,
-  99% {
+  100% {
     opacity: 1;
   }
 `;
 
 const second = keyframes`
   0%,
-  50%,
-  100% {
+  50% {
     opacity: 0;
   }
 
   51%,
-  99% {
+  100% {
     opacity: 1;
   }
 `;
@@ -75,14 +73,14 @@ const Text = styled.span`
 
 const One = styled.span`
   opacity: 1;
-  animation: ${first} 4s linear infinite;
+  animation: ${first} 4s linear infinite alternate;
   position: absolute;
   transform: translate(-70%, -70%);
 `;
 
 const Two = styled.span`
   opacity: 0;
-  animation: ${second} 4s linear infinite;
+  animation: ${second} 4s linear infinite alternate;
   position: absolute;
   transform: translate(-50%, -13%);
 `;

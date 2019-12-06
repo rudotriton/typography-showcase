@@ -6,6 +6,8 @@ import BlockThirteen from '../components/Block-13';
 import BlockFourteen from '../components/Block-14';
 import BlockFifteen from '../components/Block-15';
 import BlockSixteen from '../components/Block-16';
+import BlockSeventeen from '../components/Block-17';
+import BlockEighteen from '../components/Block-18';
 
 const PageTwo = () => (
   <Wrapper>
@@ -15,6 +17,8 @@ const PageTwo = () => (
     <BlockFourteen />
     <BlockFifteen />
     <BlockSixteen />
+    <BlockSeventeen />
+    <BlockEighteen />
   </Wrapper>
 );
 
