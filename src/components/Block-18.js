@@ -5,6 +5,7 @@ import BlinkingStar from './BlinkingStar';
 const Appear = keyframes`
   0%,
   20% {
+    opacity: 0;
     clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
   }
 
