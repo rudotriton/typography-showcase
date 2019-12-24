@@ -3,18 +3,21 @@ import styled, { keyframes } from 'styled-components';
 
 const Appear = keyframes`
   0%,
-  20% {
-    color: rgba(0, 0, 0, 0);
-  }
-
-  80%,
+  10%,
+  90%,
   100% {
-    color: rgba(0, 0, 0, 1);
+    text-shadow: none;
+  }
+  
+  50% {
+    text-shadow:
+    -0.2rem -0.2rem 1rem rgba(255, 255, 255, 0.9),
+    0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.15);
   }
 `;
 
 const Wrapper = styled.div`
-  background-color: #cecece;
+  background-color: #efeeee;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -27,45 +30,22 @@ const Text = styled.span`
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 10rem;
-  letter-spacing: -0.5rem;
   line-height: 8rem;
-  text-transform: uppercase;
-  color: #fff;
-
-  &:first-of-type {
-    &::after {
-      content: 'Were';
-      font-size: 9rem;
-      font-family: 'Pacifico', sans-serif;
-      position: absolute;
-      text-transform: capitalize;
-      letter-spacing: 0;
-      left: 50%;
-      transform: translateX(-50%) rotate(-10deg);
-      animation: ${Appear} 3s linear infinite alternate;
-    }
-  }
-
-  &:last-of-type {
-    &::after {
-      content: 'Young';
-      font-size: 9rem;
-      font-family: 'Pacifico', sans-serif;
-      position: absolute;
-      text-transform: capitalize;
-      letter-spacing: 0;
-      left: 50%;
-      transform: translateX(-50%) rotate(-10deg);
-      animation: ${Appear} 3s ease-in-out infinite alternate;
-    }
-  }
+  color: #efeeee;
+  
 `;
 
-const BlockSeventeen = () => (
-  <Wrapper>
-    <Text>When</Text>
-    <Text>You</Text>
-  </Wrapper>
-);
+const Letter = styled.span`
+  animation: ${Appear} 6s ease-in-out ${p => p.delay}s infinite;
+`;
 
+const BlockSeventeen = () => {
+  const createLetters = (text, delay) => text.split('').map((letter, i) => <Letter delay={(delay + i) * 0.2}>{letter}</Letter>);
+  return (
+    <Wrapper>
+      <Text>{createLetters('Les Yeux', 0)}</Text>
+      <Text>{createLetters('Sans Visage', 11)}</Text>
+    </Wrapper>
+  );
+};
 export default BlockSeventeen;
