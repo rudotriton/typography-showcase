@@ -97,7 +97,7 @@ const Text = styled.span`
 const Block = styled.div`
   height: 20%;
   background-color: #000;
-  animation: ${p => p.anim} 6s linear infinite;
+  animation: ${(p) => p.anim} 6s linear infinite;
 `;
 
 const BlockFifteen = () => {

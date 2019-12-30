@@ -36,7 +36,7 @@ const Text = styled.span`
 `;
 
 const Letter = styled.span`
-  animation: ${Appear} 6s ease-in-out ${p => p.delay}s infinite;
+  animation: ${Appear} 6s ease-in-out ${(p) => p.delay}s infinite;
 `;
 
 const BlockSeventeen = () => {

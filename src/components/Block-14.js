@@ -24,8 +24,8 @@ const Text = styled.span`
   font-size: 10rem;
   color: #fff;
   position: absolute;
-  left: ${p => p.xpos}rem;
-  animation: ${wave} 8s ease-in-out ${p => p.delay}s infinite;
+  left: ${(p) => p.xpos}rem;
+  animation: ${wave} 8s ease-in-out ${(p) => p.delay}s infinite;
 `;
 
 const BlockFourteen = () => {
