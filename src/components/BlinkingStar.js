@@ -94,9 +94,9 @@ const Top = styled.div`
   height: 5px;
   background: white;
   opacity: 0;
-  top: calc(${props => props.y}% - 5px);
-  left: calc(${props => props.x}% - 1px);
-  animation: 7s ${props => props.animation} infinite ${cubicBez};
+  top: calc(${(props) => props.y}% - 5px);
+  left: calc(${(props) => props.x}% - 1px);
+  animation: 7s ${(props) => props.animation} infinite ${cubicBez};
 `;
 
 const Bottom = styled.div`
@@ -105,9 +105,9 @@ const Bottom = styled.div`
   height: 5px;
   background: white;
   opacity: 0;
-  top: calc(${props => props.y}% + 2px);
-  left: calc(${props => props.x}% - 1px);
-  animation: 7s ${props => props.animation} infinite ${cubicBez};
+  top: calc(${(props) => props.y}% + 2px);
+  left: calc(${(props) => props.x}% - 1px);
+  animation: 7s ${(props) => props.animation} infinite ${cubicBez};
 `;
 
 const Left = styled.div`
@@ -116,9 +116,9 @@ const Left = styled.div`
   height: 2px;
   background: white;
   opacity: 0;
-  top: calc(${props => props.y}% - 1px);
-  left: calc(${props => props.x}% - 5px);
-  animation: 7s ${props => props.animation} infinite ${cubicBez};
+  top: calc(${(props) => props.y}% - 1px);
+  left: calc(${(props) => props.x}% - 5px);
+  animation: 7s ${(props) => props.animation} infinite ${cubicBez};
 `;
 
 const Right = styled.div`
@@ -127,9 +127,9 @@ const Right = styled.div`
   height: 2px;
   background: white;
   opacity: 0;
-  top: calc(${props => props.y}% - 1px);
-  left: calc(${props => props.x}% + 2px);
-  animation: 7s ${props => props.animation} infinite ${cubicBez};
+  top: calc(${(props) => props.y}% - 1px);
+  left: calc(${(props) => props.x}% + 2px);
+  animation: 7s ${(props) => props.animation} infinite ${cubicBez};
 `;
 
 // eslint-disable-next-line react/prop-types

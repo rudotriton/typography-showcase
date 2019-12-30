@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const Flicker = color => keyframes`
+const Flicker = (color) => keyframes`
   0%,
   19%,
   21%,

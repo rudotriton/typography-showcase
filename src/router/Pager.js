@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   height: 20rem;
-  background: ${p => p.theme.black};
+  background: ${(p) => p.theme.black};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,7 +17,7 @@ const Button = styled.button`
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: 4px 4px;
-  color: ${p => p.theme.white};
+  color: ${(p) => p.theme.white};
   font-size: 2.5rem;
   text-transform: uppercase;
   outline: none;
@@ -44,7 +44,7 @@ const Button = styled.button`
 const Page = styled.span`
   font-size: 3rem;
   font-family: 'Inter', sans-serif;
-  color: ${p => p.theme.white};
+  color: ${(p) => p.theme.white};
   margin: 0 4rem;
 `;
 
