@@ -74,6 +74,7 @@ const FlowerWrapper = styled.div`
 `;
 
 const Flower = ({
+  // eslint-disable-next-line react/prop-types
   delay, x, y, rotation,
 }) => (
   <FlowerWrapper delay={delay} x={x} y={y} rotation={rotation}>
