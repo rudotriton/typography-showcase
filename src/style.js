@@ -18,6 +18,10 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: #000;
     font-family: sans-serif;
+    
+    *, *:before, *:after {
+      box-sizing: border-box;
+    }
 
     &::-webkit-scrollbar {
       width: 0;

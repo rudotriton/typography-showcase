@@ -8,17 +8,19 @@ import BlockFifteen from '../components/Block-15';
 import BlockSixteen from '../components/Block-16';
 import BlockSeventeen from '../components/Block-17';
 import BlockEighteen from '../components/Block-18';
+import BlockNineteen from '../components/Block-19';
 
 const PageTwo = () => (
   <Wrapper>
-    <BlockEleven />
+    {/* <BlockEleven />
     <BlockTwelve />
     <BlockThirteen />
     <BlockFourteen />
     <BlockFifteen />
     <BlockSixteen />
     <BlockSeventeen />
-    <BlockEighteen />
+    <BlockEighteen /> */}
+    <BlockNineteen />
   </Wrapper>
 );
 

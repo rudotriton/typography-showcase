@@ -54,7 +54,7 @@ const Text = styled.span`
   }
 `;
 
-const BlockSeventeen = () => {
+const BlockEighteen = () => {
   const [x] = useState(85);
   const [y] = useState(40);
   return (
@@ -65,4 +65,4 @@ const BlockSeventeen = () => {
   );
 };
 
-export default BlockSeventeen;
+export default BlockEighteen;
