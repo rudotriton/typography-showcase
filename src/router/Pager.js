@@ -3,8 +3,15 @@ import useReactRouter from 'use-react-router';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  height: 20rem;
+  padding: 5rem 0;
   background: ${(p) => p.theme.black};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+const RowWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,7 +20,7 @@ const Wrapper = styled.div`
 const Button = styled.button`
   border: none;
   padding: 1rem 3rem;
-  background: linear-gradient(to bottom, #3139d9 0%, #3139d9 100%);
+  background: linear-gradient(to bottom, #FF55A1 0%, #FF55A1 100%);
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: 4px 4px;
@@ -46,6 +53,31 @@ const Page = styled.span`
   font-family: 'Inter', sans-serif;
   color: ${(p) => p.theme.white};
   margin: 0 4rem;
+`;
+
+const A = styled.a`
+  margin-top: 5rem;
+  font-size: 2rem;
+  color: #fff;
+  outline: none;
+  text-decoration: none;
+  border: 1px solid #000;
+  border-bottom: 1px solid #fff;
+  padding: 0.5rem 1.5rem;
+
+  &:focus {
+    color: #FF55A1;
+    border: 1px solid #FF55A1;
+  }
+
+  &:hover {
+    color: #FF55A1;
+    border: 1px solid #FF55A1;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
 `;
 
 const Pager = () => {
@@ -81,19 +113,22 @@ const Pager = () => {
 
   return (
     <Wrapper>
-      <Button
-        disabled={currentPage === 1}
-        onClick={prevPage}
-      >
+      <RowWrapper>
+        <Button
+          disabled={currentPage === 1}
+          onClick={prevPage}
+        >
         Prev
-      </Button>
-      <Page>{pathname.slice(1)}</Page>
-      <Button
-        disabled={currentPage === lastPage}
-        onClick={nextPage}
-      >
+        </Button>
+        <Page>{pathname.slice(1)}</Page>
+        <Button
+          disabled={currentPage === lastPage}
+          onClick={nextPage}
+        >
         Next
-      </Button>
+        </Button>
+      </RowWrapper>
+      <A href="https://github.com/rudotriton/typography-showcase" target="_blank">GitHub</A>
     </Wrapper>
   );
 };
