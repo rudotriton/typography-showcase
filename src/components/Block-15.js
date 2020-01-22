@@ -113,7 +113,7 @@ const BlockFifteen = () => {
   return (
     <Wrapper>
       {generateBlocks()}
-      <Text>Game Over</Text>
+      <Text>Closing Time</Text>
     </Wrapper>
   );
 };

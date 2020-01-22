@@ -12,14 +12,14 @@ import BlockNineteen from '../components/Block-19';
 
 const PageTwo = () => (
   <Wrapper>
-    {/* <BlockEleven />
+    <BlockEleven />
     <BlockTwelve />
     <BlockThirteen />
     <BlockFourteen />
     <BlockFifteen />
     <BlockSixteen />
     <BlockSeventeen />
-    <BlockEighteen /> */}
+    <BlockEighteen />
     <BlockNineteen />
   </Wrapper>
 );
