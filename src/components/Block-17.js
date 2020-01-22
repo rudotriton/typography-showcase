@@ -32,7 +32,6 @@ const Text = styled.span`
   font-size: 10rem;
   line-height: 8rem;
   color: #efeeee;
-  
 `;
 
 const Letter = styled.span`
@@ -40,7 +39,7 @@ const Letter = styled.span`
 `;
 
 const BlockSeventeen = () => {
-  const createLetters = (text, delay) => text.split('').map((letter, i) => <Letter delay={(delay + i) * 0.2}>{letter}</Letter>);
+  const createLetters = (text, delay) => text.split('').map((letter, i) => <Letter key={`${i + letter}`} delay={(delay + i) * 0.2}>{letter}</Letter>);
   return (
     <Wrapper>
       <Text>{createLetters('Les Yeux', 0)}</Text>
