@@ -90,8 +90,6 @@ const Flower = ({
   </FlowerWrapper>
 );
 
-// const random = (max) => Math.floor(Math.random() * Math.floor(max));
-
 const BlockNineteen = () => {
   const createFlowers = () => {
     const flowers = [];
