@@ -86,6 +86,13 @@ const FlyLeft = keyframes`
   }
 `;
 
+const Blink = () => keyframes`
+  0%,
+  60% { transform: translate(-50%, -50%) scale(0); }
+  80% { transform: translate(-50%, -50%) scale(0.3); }
+  100% { transform: translate(-50%, -50%) scale(0); }
+`;
+
 const cubicBez = 'cubic-bezier(0.86, 0.4, 1, 1)';
 
 const Top = styled.div`
@@ -132,10 +139,11 @@ const Right = styled.div`
   animation: 7s ${(props) => props.animation} infinite ${cubicBez};
 `;
 
+
 // eslint-disable-next-line react/prop-types
 const BlinkingStar = ({ x, y }) => (
   <div>
-    <Star y={y} x={x} />
+    <Star y={y} x={x} animation={Blink} />
     <Left animation={FlyLeft} x={x} y={y} />
     <Right animation={FlyRight} x={x} y={y} />
     <Top animation={FlyUp} x={x} y={y} />
