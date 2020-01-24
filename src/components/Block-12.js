@@ -43,8 +43,4 @@ const BlockTwelve = () => (
   </Wrapper>
 );
 
-BlockTwelve.defaultProps = {};
-
-BlockTwelve.propTypes = {};
-
 export default BlockTwelve;

@@ -133,8 +133,4 @@ const Pager = () => {
   );
 };
 
-Pager.defaultProps = {};
-
-Pager.propTypes = {};
-
 export default Pager;
