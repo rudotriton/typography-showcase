@@ -51,6 +51,7 @@ const Text = styled.span`
     padding: 2rem;
     transform: translateX(-50%) rotate(-10deg);
     animation: ${Appear} 7s ease-in-out infinite;
+    position: absolute;
   }
 `;
 

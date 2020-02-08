@@ -86,6 +86,7 @@ const FlyLeft = keyframes`
   }
 `;
 
+// this creates the artificial delay on the star appearing
 const Blink = () => keyframes`
   0%,
   60% { transform: translate(-50%, -50%) scale(0); }
