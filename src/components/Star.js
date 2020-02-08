@@ -14,7 +14,7 @@ const Svg = styled.svg`
 
 const Star = ({
   // eslint-disable-next-line react/prop-types
-  x, y, animation, speed = 7, delay,
+  x, y, animation, speed = 7, delay = 0,
 }) => (
   <Svg x={x} y={y} a={animation} s={speed} d={delay} viewBox="0 0 100 100">
     <path d="M50,0 C50,37 63,50 100,50 C63,50 50,63 50,100 C50,63 37,50 0,50 C37,50 50,37 50,0 Z" />
