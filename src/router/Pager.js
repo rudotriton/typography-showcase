@@ -61,18 +61,17 @@ const A = styled.a`
   color: #fff;
   outline: none;
   text-decoration: none;
-  border: 1px solid #000;
-  border-bottom: 1px solid #fff;
-  padding: 0.5rem 1.5rem;
+  border-bottom: 2px solid #fff;
+  padding: 0 0.2rem;
 
   &:focus {
     color: #FF55A1;
-    border: 1px solid #FF55A1;
+    border-bottom: 2px solid #FF55A1;
   }
 
   &:hover {
     color: #FF55A1;
-    border: 1px solid #FF55A1;
+    border-bottom: 2px solid #FF55A1;
   }
 
   &:active {
@@ -111,26 +110,29 @@ const Pager = () => {
     }
   };
 
-  return (
-    <Wrapper>
-      <RowWrapper>
-        <Button
-          disabled={currentPage === 1}
-          onClick={prevPage}
-        >
+  if (pathname !== '/notfound') {
+    return (
+      <Wrapper>
+        <RowWrapper>
+          <Button
+            disabled={currentPage === 1}
+            onClick={prevPage}
+          >
         Prev
-        </Button>
-        <Page>{pathname.slice(1)}</Page>
-        <Button
-          disabled={currentPage === lastPage}
-          onClick={nextPage}
-        >
+          </Button>
+          <Page>{pathname.slice(1)}</Page>
+          <Button
+            disabled={currentPage === lastPage}
+            onClick={nextPage}
+          >
         Next
-        </Button>
-      </RowWrapper>
-      <A href="https://github.com/rudotriton/typography-showcase" target="_blank">GitHub</A>
-    </Wrapper>
-  );
+          </Button>
+        </RowWrapper>
+        <A href="https://github.com/rudotriton/typography-showcase" target="_blank">GitHub</A>
+      </Wrapper>
+    );
+  }
+  return [];
 };
 
 export default Pager;
