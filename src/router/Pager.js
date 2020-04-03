@@ -81,7 +81,7 @@ const A = styled.a`
 
 const Pager = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [lastPage] = useState(2);
+  const [lastPage] = useState(3);
   const {
     history,
     location: { pathname },

@@ -4,6 +4,7 @@ import {
 } from 'react-router-dom';
 import PageOne from '../pages/Page-1';
 import PageTwo from '../pages/Page-2';
+import PageThree from '../pages/Page-3';
 import Pager from './Pager';
 import NotFoundPage from '../components/NotFoundPage';
 
@@ -12,6 +13,7 @@ const AppRouter = () => (
     <Switch>
       <Route component={PageOne} path="/1" exact />
       <Route component={PageTwo} path="/2" exact />
+      <Route component={PageThree} path="/3" exact />
       <Redirect exact from="/" to="/1" />
       <Route component={NotFoundPage} />
     </Switch>
