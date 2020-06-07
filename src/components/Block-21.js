@@ -34,7 +34,7 @@ const Wrapper = styled.div`
   align-items: center;
   overflow: hidden;
   position: relative;
-    /* transform: rotateX(70deg); */
+  /* transform: rotateX(70deg); */
   & svg {
     width: 12rem;
     position: absolute;
@@ -50,11 +50,18 @@ const Wrapper = styled.div`
     }
   }
   &::after {
-    content: "";
+    content: '';
     width: 100%;
     height: 100%;
     position: absolute;
-    background: linear-gradient(180deg, transparent 0%, transparent 20%, #FFFFFF 24%, transparent 28%, transparent 100%);
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      transparent 20%,
+      #ffffff 24%,
+      transparent 28%,
+      transparent 100%
+    );
     transform: rotate(45deg);
   }
 `;
@@ -65,7 +72,7 @@ const Disc = styled.div`
   background: #111;
   border-radius: 100rem;
   &::before {
-    content: "";
+    content: '';
     border-radius: 100rem;
     position: absolute;
     left: 50%;
@@ -73,10 +80,10 @@ const Disc = styled.div`
     transform: translate(-50%, -50%);
     width: 14rem;
     height: 14rem;
-    background: radial-gradient(50% 50% at 50% 50%, #FEA701 0%, #F7310E 100%);
+    background: radial-gradient(50% 50% at 50% 50%, #fea701 0%, #f7310e 100%);
   }
   &::after {
-    content: "";
+    content: '';
     border-radius: 100rem;
     position: absolute;
     left: 50%;
@@ -97,11 +104,12 @@ const Twenty = () => (
     <Vinyl>
       <Disc />
       <svg viewBox="0 0 100 100">
-        <path id="curve" d="M89.5 50C89.5 71.8152 71.8152 89.5 50 89.5C28.1848 89.5 10.5 71.8152 10.5 50C10.5 28.1881 28.1881 10.5 50 10.5C71.8119 10.5 89.5 28.1881 89.5 50Z" />
+        <path
+          id="curve"
+          d="M89.5 50C89.5 71.8152 71.8152 89.5 50 89.5C28.1848 89.5 10.5 71.8152 10.5 50C10.5 28.1881 28.1881 10.5 50 10.5C71.8119 10.5 89.5 28.1881 89.5 50Z"
+        />
         <text width="500">
-          <textPath xlinkHref="#curve">
-        Lay All Your Love On Me
-          </textPath>
+          <textPath xlinkHref="#curve">Lay All Your Love On Me</textPath>
         </text>
       </svg>
     </Vinyl>

@@ -20,7 +20,7 @@ const RowWrapper = styled.div`
 const Button = styled.button`
   border: none;
   padding: 1rem 3rem;
-  background: linear-gradient(to bottom, #FF55A1 0%, #FF55A1 100%);
+  background: linear-gradient(to bottom, #ff55a1 0%, #ff55a1 100%);
   background-position: 0 100%;
   background-repeat: repeat-x;
   background-size: 4px 4px;
@@ -65,13 +65,13 @@ const A = styled.a`
   padding: 0 0.2rem;
 
   &:focus {
-    color: #FF55A1;
-    border-bottom: 2px solid #FF55A1;
+    color: #ff55a1;
+    border-bottom: 2px solid #ff55a1;
   }
 
   &:hover {
-    color: #FF55A1;
-    border-bottom: 2px solid #FF55A1;
+    color: #ff55a1;
+    border-bottom: 2px solid #ff55a1;
   }
 
   &:active {
@@ -114,21 +114,20 @@ const Pager = () => {
     return (
       <Wrapper>
         <RowWrapper>
-          <Button
-            disabled={currentPage === 1}
-            onClick={prevPage}
-          >
-        Prev
+          <Button disabled={currentPage === 1} onClick={prevPage}>
+            Prev
           </Button>
           <Page>{pathname.slice(1)}</Page>
-          <Button
-            disabled={currentPage === lastPage}
-            onClick={nextPage}
-          >
-        Next
+          <Button disabled={currentPage === lastPage} onClick={nextPage}>
+            Next
           </Button>
         </RowWrapper>
-        <A href="https://github.com/rudotriton/typography-showcase" target="_blank">GitHub</A>
+        <A
+          href="https://github.com/rudotriton/typography-showcase"
+          target="_blank"
+        >
+          GitHub
+        </A>
       </Wrapper>
     );
   }
