@@ -131,7 +131,7 @@ const Pager = () => {
       </Wrapper>
     );
   }
-  return [];
+  return null;
 };
 
 export default Pager;
