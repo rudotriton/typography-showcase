@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://typography-showcase.netlify.com">
-    <img height="100" src="https://raw.githubusercontent.com/rudotriton/typography-showcase/master/ts-512x512.png">
+    <img height="100" src="./ts-512x512.png">
   </a>
 </p>
 
