@@ -140,7 +140,6 @@ const Right = styled.div`
   animation: 7s ${(props) => props.animation} infinite ${cubicBez};
 `;
 
-
 // eslint-disable-next-line react/prop-types
 const BlinkingStar = ({ x, y }) => (
   <div>

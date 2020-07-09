@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled, { keyframes } from 'styled-components';
 
 const Appear = (rotation) => keyframes`
@@ -45,7 +46,8 @@ const PetalLeaf = styled.div`
   height: 10vw;
   background: ${(p) => (p.petal ? petal : leaf)};
   border-radius: 10vw 0;
-  transform: rotate(${(p) => p.rotate}deg) translate(${(p) => p.tx}vw, ${(p) => p.ty}vw);
+  transform: rotate(${(p) => p.rotate}deg)
+    translate(${(p) => p.tx}vw, ${(p) => p.ty}vw);
   left: 0;
   top: 0;
   position: absolute;
@@ -55,7 +57,7 @@ const PetalLeaf = styled.div`
 const Center = styled.div`
   width: 5vw;
   height: 5vw;
-  background: radial-gradient(50% 50% at 50% 50%, #933BD1 0%, #0E1DB4 100%);;
+  background: radial-gradient(50% 50% at 50% 50%, #933bd1 0%, #0e1db4 100%);
   position: absolute;
   transform: translate(${(p) => p.tx}vw, ${(p) => p.ty}vw) translate(-50%, -50%);
   border-radius: 5vw;
@@ -67,16 +69,14 @@ const Center = styled.div`
 const FlowerWrapper = styled.div`
   transform-origin: center;
   opacity: 0;
-  animation: ${(p) => Appear(p.rotation)} 8s ease-in-out ${(p) => p.delay}s infinite;
+  animation: ${(p) => Appear(p.rotation)} 8s ease-in-out ${(p) => p.delay}s
+    infinite;
   left: ${(p) => p.x}%;
   top: ${(p) => p.y}%;
   position: absolute;
 `;
 
-const Flower = ({
-  // eslint-disable-next-line react/prop-types
-  delay, x, y, rotation,
-}) => (
+const Flower = ({ delay, x, y, rotation }) => (
   <FlowerWrapper delay={delay} x={x} y={y} rotation={rotation}>
     <PetalLeaf rotate={0} tx={10} ty={0} />
     <PetalLeaf rotate={90} tx={0} ty={0} />
@@ -90,6 +90,13 @@ const Flower = ({
   </FlowerWrapper>
 );
 
+Flower.propTypes = {
+  delay: PropTypes.number.isRequired,
+  x: PropTypes.number.isRequired,
+  y: PropTypes.number.isRequired,
+  rotation: PropTypes.number.isRequired,
+};
+
 const BlockNineteen = () => {
   const createFlowers = () => {
     const flowers = [];
@@ -98,7 +105,7 @@ const BlockNineteen = () => {
       const y = Math.floor(Math.random() * Math.floor(80));
       const rotation = Math.floor(Math.random() * Math.floor(90));
       flowers.push(
-        <Flower key={i} delay={i * 0.4} x={x + 20} y={y} rotation={rotation} />,
+        <Flower key={i} delay={i * 0.4} x={x + 20} y={y} rotation={rotation} />
       );
     }
     return flowers;
@@ -106,13 +113,10 @@ const BlockNineteen = () => {
 
   return (
     <Wrapper>
-      {
-        createFlowers()
-      }
+      {createFlowers()}
       <Text>Grim Fandango</Text>
     </Wrapper>
   );
 };
-
 
 export default BlockNineteen;

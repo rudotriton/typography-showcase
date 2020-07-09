@@ -39,7 +39,6 @@ const colors2 = [
   '#000587',
 ];
 
-
 const perspective = (x, y, colors) => {
   let shadowPos = '';
   for (let i = 1; i < colors.length; i += 1) {
@@ -100,13 +99,12 @@ const Gradient = styled.div`
   width: 200vw;
   position: absolute;
   z-index: -1;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(0, 68, 200, 1) 0%,
-      rgba(144, 0, 229, 1) 63%,
-      rgba(201, 0, 48, 1) 100%
-    );
+  background: linear-gradient(
+    90deg,
+    rgba(0, 68, 200, 1) 0%,
+    rgba(144, 0, 229, 1) 63%,
+    rgba(201, 0, 48, 1) 100%
+  );
 `;
 
 const Text = styled.span`

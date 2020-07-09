@@ -73,7 +73,6 @@ const vertigo4 = keyframes`
   }
 `;
 
-
 const Wrapper = styled.div`
   background-color: #3139d9;
   position: relative;
