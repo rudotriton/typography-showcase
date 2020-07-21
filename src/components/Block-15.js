@@ -83,9 +83,9 @@ const Text = styled.span`
   font-family: 'Inter', sans-serif;
   color: #fff;
   font-weight: 800;
-  font-size: 8rem;
-  letter-spacing: -0.5rem;
-  width: fit-content;
+  font-size: 6rem;
+  letter-spacing: -0.3rem;
+  text-align: center;
   position: absolute;
   text-transform: uppercase;
   top: 50%;
