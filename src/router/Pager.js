@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import useReactRouter from 'use-react-router';
 import styled from 'styled-components';
+import useReactRouter from 'use-react-router';
 
 const Wrapper = styled.div`
   padding: 5rem 0;
@@ -81,7 +81,7 @@ const A = styled.a`
 
 const Pager = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const [lastPage] = useState(3);
+  const [lastPage] = useState(2);
   const {
     history,
     location: { pathname },
