@@ -1,19 +1,17 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
-import media from '../util/mediaQueries';
+import React from "react";
+import styled, { keyframes } from "styled-components";
+import media from "../util/mediaQueries";
 
 const appear = keyframes`
   0% {
-    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    opacity: 0
   }
 
   20% {
-    text-shadow: 6px 3px 0 rgba(0, 0, 0, 0.6);
     opacity: 1;
   }
 
   60% {
-    text-shadow: 6px 3px 0 rgba(0, 0, 0, 0.6);
     opacity: 1;
   }
 
@@ -23,19 +21,17 @@ const appear = keyframes`
 
   100% {
     opacity: 0;
-    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
   }
 `;
-
 
 const wave = keyframes`
   0%,
   50% {
-    bottom: -400px;
+    transform: translate3d(0, 500px, 0) rotate(45deg);
   }
 
   25% {
-    bottom: 200px;
+    transform: translate3d(0, -200px, 0) rotate(45deg);
   }
 `;
 
@@ -43,7 +39,7 @@ const Wrapper = styled.div`
   align-items: center;
   background-color: #f2dba4;
   display: flex;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 10rem;
   font-weight: 900;
   justify-content: center;
@@ -55,8 +51,16 @@ const Wrapper = styled.div`
 const Text = styled.span`
   color: #f2dba4;
   letter-spacing: 0.08em;
-  /* text-shadow: 6px 3px 0 rgba(0, 0, 0, 0.6); */
-  animation: ${appear} 8s linear infinite;
+  &::before {
+    content: "Beaches";
+    position: absolute;
+    color: rgba(0, 0, 0, 0.6);
+    top: 50%;
+    left: 50%;
+    transform: translate(-49%, -46%);
+    z-index: -1;
+    animation: ${appear} 8s linear infinite;
+  }
 `;
 
 const rotate = keyframes`
@@ -68,8 +72,7 @@ const Waves = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  bottom: -500px;
-  transform: rotate(45deg);
+  transform: translate3d(0, 500px, 0) rotate(45deg);
   animation: ${wave} 8s ease-in-out 4s infinite;
 
   & > div {
@@ -85,17 +88,17 @@ const Waves = styled.div`
   }
 
   & > .one {
-    animation: ${rotate} 7000ms infinite linear;
+    animation: ${rotate} 7s infinite linear;
     background: rgba(0, 160, 255, 0.6);
   }
 
   & > .two {
-    animation: ${rotate} 3000ms infinite linear;
+    animation: ${rotate} 3s infinite linear;
     background: rgba(0, 0, 0, 0.3);
   }
 
   & > .three {
-    animation: ${rotate} 7500ms infinite linear;
+    animation: ${rotate} 7.5s infinite linear;
     background: rgba(119, 218, 255, 0.6);
   }
 `;
