@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const first = keyframes`
   0%,
@@ -26,20 +26,20 @@ const second = keyframes`
 `;
 
 const colors = [
-  '#fa8688',
-  '#f55759',
-  '#ED3034',
-  '#E41317',
-  '#D70004',
-  '#C70003',
-  '#B30003',
-  '#9E0003',
-  '#870002',
-  '#660000',
+  "#fa8688",
+  "#f55759",
+  "#ED3034",
+  "#E41317",
+  "#D70004",
+  "#C70003",
+  "#B30003",
+  "#9E0003",
+  "#870002",
+  "#660000",
 ];
 
 const shadowGen = (start, step, iterations) => {
-  let shadow = '';
+  let shadow = "";
   let pos = start;
   colors.forEach((color) => {
     for (let i = 0; i < iterations; i += 1) {
@@ -60,7 +60,7 @@ const Wrapper = styled.div`
 `;
 
 const Text = styled.span`
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 14rem;
   font-weight: 900;
   text-transform: uppercase;
@@ -75,14 +75,14 @@ const One = styled.span`
   opacity: 1;
   animation: ${first} 4s linear infinite alternate;
   position: absolute;
-  transform: translate(-70%, -70%);
+  transform: translate3d(-70%, -70%, 0);
 `;
 
 const Two = styled.span`
   opacity: 0;
   animation: ${second} 4s linear infinite alternate;
   position: absolute;
-  transform: translate(-50%, -13%);
+  transform: translate3d(-50%, -13%, 0);
 `;
 
 const BlockEleven = () => (
