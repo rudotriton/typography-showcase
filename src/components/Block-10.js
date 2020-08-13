@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const red = keyframes`
   0%,
@@ -10,7 +10,7 @@ const red = keyframes`
   78%,
   88%,
   100% {
-    transform: translate(-50%, -50%);
+    transform: translate3d(-50%, -50%, 0);
   }
 
   5%,
@@ -20,7 +20,7 @@ const red = keyframes`
   72%,
   84%,
   95% {
-    transform: translate(-48%, -52%);
+    transform: translate3d(-48%, -52%, 0);
   }
 `;
 
@@ -31,7 +31,7 @@ const blue = keyframes`
   61%,
   88%,
   100% {
-    transform: translate(-50%, -50%);
+    transform: translate3d(-50%, -50%, 0);
   }
 
   5%,
@@ -39,7 +39,7 @@ const blue = keyframes`
   47%,
   72%,
   95% {
-    transform: translate(-52%, -48%);
+    transform: translate3d(-52%, -48%, 0);
   }
 `;
 
@@ -48,7 +48,7 @@ const Wrapper = styled.div`
   position: relative;
 
   & > span {
-    font-family: 'Inter', sans-serif;
+    font-family: "Inter", sans-serif;
     font-size: 10rem;
     font-weight: 900;
     position: absolute;
@@ -59,18 +59,18 @@ const Wrapper = styled.div`
 
     &.red {
       color: #f00;
-      transform: translate(-48%, -52%);
+      transform: translate3d(-48%, -52%, 0);
       animation: ${red} 1.5s linear infinite;
     }
 
     &.green {
       color: #0f0;
-      transform: translate(-50%, -50%);
+      transform: translate3d(-50%, -50%, 0);
     }
 
     &.blue {
       color: #00f;
-      transform: translate(-52%, -48%);
+      transform: translate3d(-52%, -48%, 0);
       animation: ${blue} 1.5s linear infinite;
     }
   }
