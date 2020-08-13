@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const vertigo1 = keyframes`
   0% {
@@ -79,7 +79,7 @@ const Wrapper = styled.div`
   overflow: hidden;
 
   span {
-    font-family: 'Monoton', sans-serif;
+    font-family: "Monoton", sans-serif;
     font-size: 10rem;
     color: rgba(0, 0, 0, 0.3);
     position: absolute;

@@ -1,36 +1,27 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const scan = keyframes`
   0%,
-  5%,
-  95%,
   100% {
-    left: 20%;
-    width: 0;
+    transform: translate3d(-250%, 0, 0);
   }
 
-  10%,
-  90% {
-    left: 15%;
-    width: 100px;
-  }
-
-  23%,
+  13%,
   60%,
   72% {
-    left: 80%;
+    transform: translate3d(300%, 0, 0);
   }
 
-  44%,
+  27%,
   65%,
   80% {
-    left: 35%;
+    transform: translate3d(-100%, 0, 0);
   }
 
   50%,
   70% {
-    left: 75%;
+    transform: translate3d(150%, 0, 0);
   }
 `;
 
@@ -47,14 +38,10 @@ const Wrapper = styled.div`
 `;
 
 const Text = styled.span`
-  font-family: 'Anton', sans-serif;
+  font-family: "Anton", sans-serif;
   color: #000;
   font-size: 10rem;
-  text-shadow:
-    -1px -1px #fff,
-    1px -1px #fff,
-    1px 1px #fff,
-    -1px 1px #fff,
+  text-shadow: -1px -1px #fff, 1px -1px #fff, 1px 1px #fff, -1px 1px #fff,
     0 1rem #fff;
   text-transform: uppercase;
 `;
@@ -62,28 +49,29 @@ const Text = styled.span`
 const Overlay = styled.div`
   position: absolute;
   background-color: white;
-  left: 50%;
-  top: 0;
   width: 100px;
   height: 100%;
   mix-blend-mode: difference;
   animation: ${scan} 5s linear infinite;
+  transform: translate3d(-200%, 0, 0);
 `;
 
 const BlockNine = () => (
   <Wrapper>
-    <Text style={{
-      marginBottom: '-1.35rem',
-      letterSpacing: '-0.04em',
-    }}
+    <Text
+      style={{
+        marginBottom: "-1.35rem",
+        letterSpacing: "-0.04em",
+      }}
     >
       My Strange
     </Text>
-    <Text style={{
-      marginTop: '-1.35rem',
-      marginLeft: '1.1rem',
-      letterSpacing: '0.066em',
-    }}
+    <Text
+      style={{
+        marginTop: "-1.35rem",
+        marginLeft: "1.1rem",
+        letterSpacing: "0.066em",
+      }}
     >
       Addiction
     </Text>
