@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const fade = keyframes`
   0%,
@@ -12,7 +12,7 @@ const fade = keyframes`
   65%,
   68%,
   100% {
-    z-index: -1;
+    filter: invert(0);
   }
 
   25%,
@@ -23,7 +23,7 @@ const fade = keyframes`
   63%,
   66%,
   67% {
-    z-index: 0;
+    filter: invert(0.5);
   }
 `;
 
@@ -38,14 +38,16 @@ const Wrapper = styled.div`
 
 const Text = styled.span`
   color: rgba(255, 0, 107, 0.75);
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 10rem;
   font-weight: 900;
   text-transform: uppercase;
   z-index: 1;
+  animation: ${fade} 8s linear infinite;
+  transform: translate3d(0, 0, 0);
 
   &::before {
-    content: 'Manic';
+    content: "Manic";
     position: absolute;
     color: #ffc500;
     top: 50%;
@@ -53,7 +55,6 @@ const Text = styled.span`
     transform: translate(-50%, -50%);
     z-index: -1;
     font-style: italic;
-    animation: ${fade} 4s linear infinite;
   }
 `;
 
