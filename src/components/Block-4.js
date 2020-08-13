@@ -1,88 +1,54 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const colors1 = [
-  '#fe8ce2',
-  '#fe7fdf',
-  '#fc66d8',
-  '#fa4ed2',
-  '#f638cd',
-  '#f225c8',
-  '#ed15c4',
-  '#e707c1',
-  '#e000c0',
-  '#d700bf',
-  '#cd00bc',
-  '#c100b9',
-  '#b300a5',
-  '#9e00a5',
-  '#8a0096',
-  '#770087',
+  "#ffc8f2",
+  "#fe8ce2",
+  "#fe7fdf",
+  "#fc66d8",
+  "#fa4ed2",
+  "#f638cd",
+  "#f225c8",
+  "#ed15c4",
+  "#e707c1",
+  "#e000c0",
+  "#d700bf",
+  "#cd00bc",
+  "#c100b9",
+  "#b300a5",
+  "#9e00a5",
+  "#8a0096",
+  "#770087",
 ];
 
-const colors2 = [
-  '#F2FAFF',
-  '#DEF2FE',
-  '#CBEAFE',
-  '#A4D8FC',
-  '#7EC6F9',
-  '#5DB3F5',
-  '#409FF1',
-  '#278AEB',
-  '#1375E4',
-  '#045EDB',
-  '#004CD0',
-  '#003BC4',
-  '#002BB6',
-  '#001BA7',
-  '#000F97',
-  '#000587',
-];
-
-const perspective = (x, y, colors) => {
-  let shadowPos = '';
-  for (let i = 1; i < colors.length; i += 1) {
-    shadowPos += `${x}${i}px ${y}${i}px ${colors[i]}, `;
-  }
-  shadowPos = shadowPos.slice(0, -2);
-  return shadowPos;
-};
-
-const perspectiveMotion = keyframes`
+const rotate = keyframes`
   from {
-    text-shadow: ${perspective('-', '-', colors1)};
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(-360deg);
+  }
+`;
 
-  12.5% {
-    text-shadow: ${perspective('', '-', colors1)};
+const perspectiveMotion = (distance) => keyframes`
+  from {
+    transform: translate3d(calc(${-distance}px - 50%), -50%, 0) rotate(0deg);
   }
 
   25% {
-    text-shadow: ${perspective('', '', colors1)};
-  }
-
-  37.5% {
-    text-shadow: ${perspective('-', '', colors1)};
+    transform: translate3d(calc(${-distance}px - 50%), -50%, 0) rotate(90deg);
   }
 
   50% {
-    text-shadow: ${perspective('-', '-', colors2)};
-  }
-
-  62.5% {
-    text-shadow: ${perspective('', '-', colors2)};
+    transform: translate3d(calc(${-distance}px - 50%), -50%, 0)rotate(180deg);
   }
 
   75% {
-    text-shadow: ${perspective('', '', colors2)};
-  }
-
-  87.5% {
-    text-shadow: ${perspective('-', '', colors2)};
+    transform: translate3d(calc(${-distance}px - 50%), -50%,  0) rotate(270deg);
   }
 
   to {
-    text-shadow: ${perspective('-', '-', colors1)};
+    transform: translate3d(calc(${-distance}px - 50%), -50%, 0) rotate(360deg);
   }
 `;
 
@@ -95,31 +61,45 @@ const Wrapper = styled.div`
 `;
 
 const Gradient = styled.div`
-  height: 100rem;
-  width: 200vw;
+  height: 100%;
+  width: 100%;
   position: absolute;
-  z-index: -1;
+  z-index: -20;
   background: linear-gradient(
-    90deg,
+    45deg,
     rgba(0, 68, 200, 1) 0%,
     rgba(144, 0, 229, 1) 63%,
     rgba(201, 0, 48, 1) 100%
   );
 `;
 
+const Rotater = styled.div`
+  position: relative;
+  animation: ${rotate} 6s linear infinite;
+`;
+
 const Text = styled.span`
   font-size: 10rem;
+  position: absolute;
   text-transform: uppercase;
-  font-family: 'Passion One', sans-serif;
+  font-family: "Passion One", sans-serif;
   letter-spacing: 10px;
-  color: rgba(255, 255, 255, 0.8);
-  animation: ${perspectiveMotion} 6s linear infinite;
+  z-index: ${(p) => p.z};
+  color: ${(p) => p.color};
+  animation: ${(p) => perspectiveMotion(p.distance)} 6s linear infinite;
+  transform: translate3d(0, 0, 0);
 `;
 
 const BlockFour = () => (
   <Wrapper>
     <Gradient />
-    <Text>Dreams</Text>
+    <Rotater>
+      {colors1.map((color, idx) => (
+        <Text key={`${idx + color}`} color={color} distance={idx} z={-idx}>
+          Dreams
+        </Text>
+      ))}
+    </Rotater>
   </Wrapper>
 );
 
