@@ -1,14 +1,14 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
-const wave = keyframes`
+const wave = (xpos) => keyframes`
   0%,
   100% {
-    top: 0;
+    transform: translate3d(${xpos}rem, 0, 0);
   }
 
   50% {
-    top: 70%;
+    transform: translate3d(${xpos}rem, 200%, 0);
   }
 `;
 
@@ -24,8 +24,8 @@ const Text = styled.span`
   font-size: 10rem;
   color: #fff;
   position: absolute;
-  left: ${(p) => p.xpos}rem;
-  animation: ${wave} 8s ease-in-out ${(p) => p.delay}s infinite;
+  animation: ${(p) => wave(p.xpos)} 8s ease-in-out ${(p) => p.delay}s infinite;
+  transform: translate3d(${(p) => p.xpos}rem, 0, 0);
 `;
 
 const BlockFourteen = () => {
@@ -33,18 +33,14 @@ const BlockFourteen = () => {
     const waves = [];
     for (let i = 1; i < 50; i += 1) {
       waves.push(
-        <Text xpos={i} delay={0.2 * i} key={i}>{'<wave>'}</Text>,
+        <Text xpos={i * 1.1} delay={0.2 * i} key={i}>
+          {"<wave>"}
+        </Text>
       );
     }
     return waves.reverse();
   };
-  return (
-    <Wrapper>
-      {
-        generateWaves()
-      }
-    </Wrapper>
-  );
+  return <Wrapper>{generateWaves()}</Wrapper>;
 };
 
 export default BlockFourteen;
