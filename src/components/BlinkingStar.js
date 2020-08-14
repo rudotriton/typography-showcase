@@ -1,16 +1,16 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
-import Star from './Star';
+import Star from "components/Star";
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const FlyUp = keyframes`
   0%,
   60% {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
     opacity: 0;
   }
 
   74% {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 
   90% {
@@ -18,7 +18,7 @@ const FlyUp = keyframes`
   }
 
   100% {
-    transform: translateY(-300px);
+    transform: translate3d(0, -300px, 0);
     opacity: 0;
   }
 `;
@@ -26,12 +26,12 @@ const FlyUp = keyframes`
 const FlyRight = keyframes`
   0%,
   60% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
     opacity: 0;
   }
 
   74% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 
   90% {
@@ -39,7 +39,7 @@ const FlyRight = keyframes`
   }
 
   100% {
-    transform: translateX(300px);
+    transform: translate3d(300px, 0, 0);
     opacity: 0;
   }
 `;
@@ -47,12 +47,12 @@ const FlyRight = keyframes`
 const FlyDown = keyframes`
   0%,
   60% {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
     opacity: 0;
   }
 
   74% {
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
   }
 
   90% {
@@ -60,7 +60,7 @@ const FlyDown = keyframes`
   }
 
   100% {
-    transform: translateY(300px);
+    transform: translate3d(0, 300px, 0);
     opacity: 0;
   }
 `;
@@ -68,12 +68,12 @@ const FlyDown = keyframes`
 const FlyLeft = keyframes`
   0%,
   60% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
     opacity: 0;
   }
 
   74% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 
   90% {
@@ -81,20 +81,25 @@ const FlyLeft = keyframes`
   }
 
   100% {
-    transform: translateX(-300px);
+    transform: translate3d(-300px, 0, 0);
     opacity: 0;
   }
 `;
 
-// this creates the artificial delay on the star appearing
-const Blink = () => keyframes`
+const Blink = keyframes`
   0%,
-  60% { transform: translate(-50%, -50%) scale(0); }
-  80% { transform: translate(-50%, -50%) scale(0.3); }
-  100% { transform: translate(-50%, -50%) scale(0); }
+  60% {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg) scale(0);
+  }
+  80% {
+    transform: translate3d(-50%, -50%, 0) rotate(180deg) scale(0.3);
+  }
+  100% {
+    transform: translate3d(-50%, -50%, 0) rotate(360deg) scale(0);
+  }
 `;
 
-const cubicBez = 'cubic-bezier(0.86, 0.4, 1, 1)';
+const cubicBez = "cubic-bezier(0.86, 0.4, 1, 1)";
 
 const Top = styled.div`
   position: absolute;
@@ -104,7 +109,8 @@ const Top = styled.div`
   opacity: 0;
   top: calc(${(props) => props.y}% - 5px);
   left: calc(${(props) => props.x}% - 1px);
-  animation: 7s ${(props) => props.animation} infinite ${cubicBez};
+  animation: ${FlyUp} ${(p) => p.speed}s infinite ${cubicBez};
+  transform: translate3d(0, 0, 0);
 `;
 
 const Bottom = styled.div`
@@ -115,7 +121,8 @@ const Bottom = styled.div`
   opacity: 0;
   top: calc(${(props) => props.y}% + 2px);
   left: calc(${(props) => props.x}% - 1px);
-  animation: 7s ${(props) => props.animation} infinite ${cubicBez};
+  animation: ${FlyDown} ${(p) => p.speed}s infinite ${cubicBez};
+  transform: translate3d(0, 0, 0);
 `;
 
 const Left = styled.div`
@@ -126,7 +133,8 @@ const Left = styled.div`
   opacity: 0;
   top: calc(${(props) => props.y}% - 1px);
   left: calc(${(props) => props.x}% - 5px);
-  animation: 7s ${(props) => props.animation} infinite ${cubicBez};
+  animation: ${FlyLeft} ${(p) => p.speed}s infinite ${cubicBez};
+  transform: translate3d(0, 0, 0);
 `;
 
 const Right = styled.div`
@@ -137,17 +145,18 @@ const Right = styled.div`
   opacity: 0;
   top: calc(${(props) => props.y}% - 1px);
   left: calc(${(props) => props.x}% + 2px);
-  animation: 7s ${(props) => props.animation} infinite ${cubicBez};
+  animation: ${FlyRight} ${(p) => p.speed}s infinite ${cubicBez};
+  transform: translate3d(0, 0, 0);
 `;
 
 // eslint-disable-next-line react/prop-types
-const BlinkingStar = ({ x, y }) => (
+const BlinkingStar = ({ x, y, speed }) => (
   <div>
-    <Star y={y} x={x} animation={Blink} />
-    <Left animation={FlyLeft} x={x} y={y} />
-    <Right animation={FlyRight} x={x} y={y} />
-    <Top animation={FlyUp} x={x} y={y} />
-    <Bottom animation={FlyDown} x={x} y={y} />
+    <Star y={y} x={x} animation={Blink} speed={speed} />
+    <Left speed={speed} x={x} y={y} />
+    <Right speed={speed} x={x} y={y} />
+    <Top speed={speed} x={x} y={y} />
+    <Bottom speed={speed} x={x} y={y} />
   </div>
 );
 
