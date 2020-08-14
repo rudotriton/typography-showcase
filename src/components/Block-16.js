@@ -1,43 +1,23 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
-const SlideFromLeft = keyframes`
+const slideIn = (ypos) => keyframes`
   0%,
   15% {
-    right: 100%;
+    transform: translate3d(-300%, ${ypos}%, 0)
   }
 
   30% {
-    right: 30%;
+    transform: translate3d(-60%, ${ypos}%, 0)
   }
 
   70% {
-    right: 25%;
+    transform: translate3d(-40%, ${ypos}%, 0)
   }
 
   85%,
   100% {
-    right: -100%;
-  }
-`;
-
-const SlideFromRight = keyframes`
-  0%,
-  15% {
-    left: 100%;
-  }
-
-  30% {
-    left: 30%;
-  }
-
-  70% {
-    left: 25%;
-  }
-
-  85%,
-  100% {
-    left: -100%;
+    transform: translate3d(300%, ${ypos}%, 0)
   }
 `;
 
@@ -48,7 +28,7 @@ const Wrapper = styled.div`
 `;
 
 const Text = styled.span`
-  font-family: 'Passion One', sans-serif;
+  font-family: "Passion One", sans-serif;
   color: transparent;
   font-weight: 900;
   font-size: 10rem;
@@ -59,13 +39,14 @@ const Text = styled.span`
   text-shadow: 0.5rem 0.5rem 0 #ef044d, 2rem 2rem 0 #000;
   -webkit-text-stroke: 2px #fff;
   position: absolute;
-  top: 25%;
-  animation: ${SlideFromRight} 3s linear infinite alternate;
-  padding: 9rem;
+  top: 50%;
+  left: 50%;
+  animation: ${slideIn(0)} 3s linear infinite reverse;
+  transform: translate3d(-20%, 0, 0);
 
   &:first-of-type {
-    animation: ${SlideFromLeft} 3s linear infinite alternate;
-    top: 0;
+    animation: ${slideIn(-100)} 3s linear infinite;
+    transform: translate3d(-80%, -100%, 0);
   }
 `;
 
