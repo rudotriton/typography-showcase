@@ -1,9 +1,9 @@
-import React from 'react';
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
-import PageOne from '../pages/Page-1';
-import PageTwo from '../pages/Page-2';
-import Pager from './Pager';
-import NotFoundPage from '../components/NotFoundPage';
+import NotFoundPage from "components/NotFoundPage";
+import PageOne from "pages/Page-1";
+import PageTwo from "pages/Page-2";
+import React from "react";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+import Pager from "router/Pager";
 
 const AppRouter = () => (
   <BrowserRouter basename={process.env.PUBLIC_URL}>

@@ -1,6 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import media from "../util/mediaQueries";
+import media from "util/mediaQueries";
 
 const appear = keyframes`
   0% {
