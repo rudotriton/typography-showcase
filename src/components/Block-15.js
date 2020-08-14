@@ -1,62 +1,15 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
-const Extend1 = keyframes`
-  0% {
-    width: 0%;
-  }
-
-  10%,
-  100% {
-    width: 100%;
-  }
-`;
-
-const Extend2 = keyframes`
+const slideIn = (idx) => keyframes`
   0%,
-  10% {
-    width: 0%;
+  ${idx * 10}% {
+    transform: translate3d(-100%, 0, 0);
   }
 
-  20%,
+  ${idx * 10 + 10}%,
   100% {
-    width: 100%;
-  }
-`;
-
-const Extend3 = keyframes`
-  0%,
-  20% {
-    width: 0%;
-  }
-
-  30%,
-  100% {
-    width: 100%;
-  }
-`;
-
-const Extend4 = keyframes`
-  0%,
-  30% {
-    width: 0%;
-  }
-
-  40%,
-  100% {
-    width: 100%;
-  }
-`;
-
-const Extend5 = keyframes`
-  0%,
-  40% {
-    width: 0%;
-  }
-
-  50%,
-  100% {
-    width: 100%;
+    transform: translate3d(0, 0, 0);
   }
 `;
 
@@ -75,12 +28,12 @@ const Appear = keyframes`
 `;
 
 const Wrapper = styled.div`
-  background-color: white;
+  background-color: #fff;
   position: relative;
 `;
 
 const Text = styled.span`
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: #fff;
   font-weight: 800;
   font-size: 6rem;
@@ -97,15 +50,16 @@ const Text = styled.span`
 const Block = styled.div`
   height: 20%;
   background-color: #000;
-  animation: ${(p) => p.anim} 6s linear infinite;
+  width: 100%;
+  animation: ${(p) => slideIn(p.idx)} 6s linear infinite;
+  transform: translate3d(0, 0, 0);
 `;
 
 const BlockFifteen = () => {
   const generateBlocks = () => {
     const blocks = [];
-    const animations = [Extend1, Extend2, Extend3, Extend4, Extend5];
     for (let i = 0; i <= 4; i += 1) {
-      blocks.push(<Block key={i} anim={animations[i]} />);
+      blocks.push(<Block key={i} idx={i} />);
     }
     return blocks;
   };
