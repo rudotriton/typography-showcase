@@ -1,20 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled, { keyframes } from 'styled-components';
+import PropTypes from "prop-types";
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const Appear = (rotation) => keyframes`
   0% {
-    transform: scale(0) rotate(${rotation}deg);
+    transform: translate3d(0,0,0) scale(0) rotate(${rotation}deg);
     opacity: 1;
   }
 
   90% {
-    transform: scale(1) rotate(${rotation}deg);
+    transform: translate3d(0,0,0) scale(1.2) rotate(calc(${rotation}deg + 360deg));
     opacity: 1;
   }
   100% {
     opacity: 0;
-    transform: rotate(${rotation}deg);
+    transform: translate3d(0,0,0) rotate(${rotation}deg);
   }
 `;
 
@@ -29,7 +29,7 @@ const Wrapper = styled.div`
 `;
 
 const Text = styled.span`
-  font-family: 'Pacifico', sans-serif;
+  font-family: "Pacifico", sans-serif;
   font-size: 10rem;
   text-align: center;
   line-height: 8rem;
@@ -38,8 +38,8 @@ const Text = styled.span`
   color: #000;
 `;
 
-const leaf = 'linear-gradient(180deg, #1C803A 0%, #09FF13 100%)';
-const petal = 'radial-gradient(50% 50% at 50% 50%, #2540FF 0%, #7015E7 100%);';
+const leaf = "linear-gradient(180deg, #1C803A 0%, #09FF13 100%)";
+const petal = "radial-gradient(50% 50% at 50% 50%, #2540FF 0%, #7015E7 100%);";
 
 const PetalLeaf = styled.div`
   width: 10vw;
@@ -47,7 +47,7 @@ const PetalLeaf = styled.div`
   background: ${(p) => (p.petal ? petal : leaf)};
   border-radius: 10vw 0;
   transform: rotate(${(p) => p.rotate}deg)
-    translate(${(p) => p.tx}vw, ${(p) => p.ty}vw);
+    translate3d(${(p) => p.tx}vw, ${(p) => p.ty}vw, 0);
   left: 0;
   top: 0;
   position: absolute;
@@ -59,7 +59,8 @@ const Center = styled.div`
   height: 5vw;
   background: radial-gradient(50% 50% at 50% 50%, #933bd1 0%, #0e1db4 100%);
   position: absolute;
-  transform: translate(${(p) => p.tx}vw, ${(p) => p.ty}vw) translate(-50%, -50%);
+  transform: translate3d(calc(${(p) => p.tx}vw), calc(${(p) => p.ty}vw), 0)
+    translate(-50%, -50%);
   border-radius: 5vw;
   border: 2px solid #000;
   left: 0;
@@ -69,15 +70,18 @@ const Center = styled.div`
 const FlowerWrapper = styled.div`
   transform-origin: center;
   opacity: 0;
-  animation: ${(p) => Appear(p.rotation)} 8s ease-in-out ${(p) => p.delay}s
-    infinite;
+  animation: ${(p) => Appear(p.rotation)} ${(p) => p.speed}s ease-in-out
+    ${(p) => p.delay}s infinite;
+  transform: translate3d(0, 0, 0);
+  position: absolute;
+  width: 20vw;
+  height: 20vw;
   left: ${(p) => p.x}%;
   top: ${(p) => p.y}%;
-  position: absolute;
 `;
 
-const Flower = ({ delay, x, y, rotation }) => (
-  <FlowerWrapper delay={delay} x={x} y={y} rotation={rotation}>
+const Flower = ({ delay, x, y, rotation, speed }) => (
+  <FlowerWrapper speed={speed} delay={delay} x={x} y={y} rotation={rotation}>
     <PetalLeaf rotate={0} tx={10} ty={0} />
     <PetalLeaf rotate={90} tx={0} ty={0} />
     <PetalLeaf rotate={0} tx={0} ty={10} />
@@ -95,17 +99,26 @@ Flower.propTypes = {
   x: PropTypes.number.isRequired,
   y: PropTypes.number.isRequired,
   rotation: PropTypes.number.isRequired,
+  speed: PropTypes.number.isRequired,
 };
 
 const BlockNineteen = () => {
   const createFlowers = () => {
     const flowers = [];
-    for (let i = 0; i <= 25; i += 1) {
-      const x = Math.floor(Math.random() * Math.floor(80));
+    for (let i = 0; i <= 15; i += 1) {
+      const x = Math.floor(Math.random() * Math.floor(70));
       const y = Math.floor(Math.random() * Math.floor(80));
+      const speed = Math.floor(Math.random() * Math.floor(5));
       const rotation = Math.floor(Math.random() * Math.floor(90));
       flowers.push(
-        <Flower key={i} delay={i * 0.4} x={x + 20} y={y} rotation={rotation} />
+        <Flower
+          key={i}
+          speed={speed + 3}
+          delay={i * 0.4}
+          x={x + 10}
+          y={y}
+          rotation={rotation}
+        />
       );
     }
     return flowers;
