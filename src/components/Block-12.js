@@ -10,7 +10,7 @@ const Flicker = keyframes`
   54%,
   56%,
   100% {
-    opacity: 1
+    opacity: 1;
   }
 
   20%,
