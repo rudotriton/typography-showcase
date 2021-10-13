@@ -5,20 +5,20 @@ import BlinkingStar from "./BlinkingStar";
 const Appear = keyframes`
   0%,
   40% {
-    transform: translate3d(-50%, 0 ,0) rotate(-10deg) scale(100);
+    transform: translate3d(-50%, 0, 0) rotate(-10deg) scale(120);
   }
 
   60% {
-    transform: translate3d(-50%, 0 ,0) rotate(-10deg) scale(1);
+    transform: translate3d(-50%, 0, 0) rotate(-10deg) scale(1);
   }
 
   81% {
-    transform: translate3d(-50%, 0 ,0) rotate(-10deg) scale(1);
+    transform: translate3d(-50%, 0, 0) rotate(-10deg) scale(1);
     opacity: 1;
   }
 
   100% {
-    transform: translate3d(-50%, 0 ,0) rotate(-10deg) scale(1);
+    transform: translate3d(-50%, 0, 0) rotate(-10deg) scale(1);
     opacity: 0;
   }
 `;
@@ -41,6 +41,7 @@ const Text = styled.span`
 
   &::after {
     content: "You're a star";
+    text-align: center;
     font-size: 6rem;
     color: #fff;
     font-family: "Pacifico", sans-serif;
@@ -51,8 +52,7 @@ const Text = styled.span`
     left: 50%;
     padding: 2rem;
     transform: translate3d(-50%, 0, 0) rotate(-10deg);
-    animation: ${Appear} 7s ease-in-out infinite;
-    position: absolute;
+    animation: ${Appear} 5s ease-in-out infinite;
   }
 `;
 
@@ -62,7 +62,7 @@ const BlockEighteen = () => {
   return (
     <Wrapper>
       <Text>Andy</Text>
-      <BlinkingStar x={x} y={y} speed={7} />
+      <BlinkingStar x={x} y={y} speed={5} />
     </Wrapper>
   );
 };

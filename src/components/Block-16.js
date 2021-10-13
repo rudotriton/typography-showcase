@@ -4,20 +4,20 @@ import styled, { keyframes } from "styled-components";
 const slideIn = (ypos) => keyframes`
   0%,
   15% {
-    transform: translate3d(-300%, ${ypos}%, 0)
+    transform: translate3d(-300%, ${ypos}%, 0);
   }
 
   30% {
-    transform: translate3d(-60%, ${ypos}%, 0)
+    transform: translate3d(-60%, ${ypos}%, 0);
   }
 
   70% {
-    transform: translate3d(-40%, ${ypos}%, 0)
+    transform: translate3d(-40%, ${ypos}%, 0);
   }
 
   85%,
   100% {
-    transform: translate3d(300%, ${ypos}%, 0)
+    transform: translate3d(300%, ${ypos}%, 0);
   }
 `;
 
