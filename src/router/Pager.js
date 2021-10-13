@@ -41,6 +41,7 @@ const Button = styled.button`
 
   &:hover {
     background-size: 4px 50px;
+    color: black;
   }
 
   &:active {
