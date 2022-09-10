@@ -18,7 +18,8 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background-color: #000;
     font-family: sans-serif;
-    
+    margin: 0;
+
     *, *:before, *:after {
       box-sizing: border-box;
     }

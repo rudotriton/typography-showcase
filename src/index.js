@@ -1,11 +1,10 @@
+import { createRoot } from "react-dom/client";
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle, theme } from './style';
-import 'normalize.css';
 import AppRouter from './router/AppRouter';
 
-const root = (
+const jsx = (
   <ThemeProvider theme={theme}>
     <>
       <GlobalStyle />
@@ -14,4 +13,5 @@ const root = (
   </ThemeProvider>
 );
 
-ReactDOM.render(root, document.getElementById('root'));
+const root = createRoot(document.getElementById("root"));
+root.render(jsx);

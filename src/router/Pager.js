@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import useReactRouter from 'use-react-router';
 
 const Wrapper = styled.div`
   padding: 5rem 0;
@@ -80,13 +80,14 @@ const A = styled.a`
   }
 `;
 
-const Pager = () => {
+function Pager() {
   const [currentPage, setCurrentPage] = useState(1);
   const [lastPage] = useState(2);
-  const {
-    history,
-    location: { pathname },
-  } = useReactRouter();
+  /* const { */
+  /*   location: { pathname }, */
+  /* } = useReactRouter(); */
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     setCurrentPage(parseInt(pathname.slice(1), 10));
@@ -100,14 +101,14 @@ const Pager = () => {
   const prevPage = () => {
     const prev = currentPage - 1;
     if (prev >= 1) {
-      history.push(`/${prev}`);
+      navigate(`/${prev}`);
     }
   };
 
   const nextPage = () => {
     const next = currentPage + 1;
     if (next <= lastPage) {
-      history.push(`/${next}`);
+      navigate(`/${next}`);
     }
   };
 
