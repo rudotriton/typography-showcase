@@ -90,17 +90,19 @@ const Text = styled.span`
   transform: translate3d(0, 0, 0);
 `;
 
-const BlockFour = () => (
-  <Wrapper>
-    <Gradient />
-    <Rotater>
-      {colors1.map((color, idx) => (
-        <Text key={`${idx + color}`} color={color} distance={idx} z={-idx}>
-          Dreams
-        </Text>
-      ))}
-    </Rotater>
-  </Wrapper>
-);
+function BlockFour() {
+  return (
+    <Wrapper>
+      <Gradient />
+      <Rotater>
+        {colors1.map((color, idx) => (
+          <Text key={`${idx + color}`} color={color} distance={idx} z={-idx}>
+            Dreams
+          </Text>
+        ))}
+      </Rotater>
+    </Wrapper>
+  );
+}
 
 export default BlockFour;

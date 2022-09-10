@@ -103,15 +103,17 @@ const Waves = styled.div`
   }
 `;
 
-const BlockSeven = () => (
-  <Wrapper>
-    <Text>Beaches</Text>
-    <Waves>
-      <div className="one" />
-      <div className="two" />
-      <div className="three" />
-    </Waves>
-  </Wrapper>
-);
+function BlockSeven() {
+  return (
+    <Wrapper>
+      <Text>Beaches</Text>
+      <Waves>
+        <div className="one" />
+        <div className="two" />
+        <div className="three" />
+      </Waves>
+    </Wrapper>
+  );
+}
 
 export default BlockSeven;

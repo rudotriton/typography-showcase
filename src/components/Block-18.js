@@ -56,7 +56,7 @@ const Text = styled.span`
   }
 `;
 
-const BlockEighteen = () => {
+function BlockEighteen() {
   const [x] = useState(85);
   const [y] = useState(40);
   return (

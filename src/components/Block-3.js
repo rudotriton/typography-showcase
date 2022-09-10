@@ -47,11 +47,13 @@ const Text = styled.span`
   text-shadow: 4px 4px #000000ba;
 `;
 
-const BlockThree = () => (
-  <Wrapper>
-    <Rays />
-    <Text>Faith</Text>
-  </Wrapper>
-);
+function BlockThree() {
+  return (
+    <Wrapper>
+      <Rays />
+      <Text>Faith</Text>
+    </Wrapper>
+  );
+}
 
 export default BlockThree;

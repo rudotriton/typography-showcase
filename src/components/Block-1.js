@@ -84,14 +84,16 @@ const Text = styled.span`
   transform: translate3d(0, 0, 0);
 `;
 
-const BlockOne = () => (
-  <Wrapper>
-    {[...colors, ...colors].map((color, idx) => (
-      <Text key={`${idx + color}`} color={color} delay={idx * 0.2}>
-        Love
-      </Text>
-    ))}
-  </Wrapper>
-);
+function BlockOne() {
+  return (
+    <Wrapper>
+      {[...colors, ...colors].map((color, idx) => (
+        <Text key={`${idx + color}`} color={color} delay={idx * 0.2}>
+          Love
+        </Text>
+      ))}
+    </Wrapper>
+  );
+}
 
 export default BlockOne;

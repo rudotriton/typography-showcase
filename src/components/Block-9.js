@@ -56,27 +56,29 @@ const Overlay = styled.div`
   transform: translate3d(-200%, 0, 0);
 `;
 
-const BlockNine = () => (
-  <Wrapper>
-    <Text
-      style={{
-        marginBottom: "-1.35rem",
-        letterSpacing: "-0.04em",
-      }}
-    >
-      My Strange
-    </Text>
-    <Text
-      style={{
-        marginTop: "-1.35rem",
-        marginLeft: "1.1rem",
-        letterSpacing: "0.066em",
-      }}
-    >
-      Addiction
-    </Text>
-    <Overlay />
-  </Wrapper>
-);
+function BlockNine() {
+  return (
+    <Wrapper>
+      <Text
+        style={{
+          marginBottom: "-1.35rem",
+          letterSpacing: "-0.04em",
+        }}
+      >
+        My Strange
+      </Text>
+      <Text
+        style={{
+          marginTop: "-1.35rem",
+          marginLeft: "1.1rem",
+          letterSpacing: "0.066em",
+        }}
+      >
+        Addiction
+      </Text>
+      <Overlay />
+    </Wrapper>
+  );
+}
 
 export default BlockNine;

@@ -110,14 +110,16 @@ const Wrapper = styled.div`
   }
 `;
 
-const BlockEight = () => (
-  <Wrapper>
-    <span className="main">Vertigo</span>
-    <span className="one">Vertigo</span>
-    <span className="two">Vertigo</span>
-    <span className="three">Vertigo</span>
-    <span className="four">Vertigo</span>
-  </Wrapper>
-);
+function BlockEight() {
+  return (
+    <Wrapper>
+      <span className="main">Vertigo</span>
+      <span className="one">Vertigo</span>
+      <span className="two">Vertigo</span>
+      <span className="three">Vertigo</span>
+      <span className="four">Vertigo</span>
+    </Wrapper>
+  );
+}
 
 export default BlockEight;

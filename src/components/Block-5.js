@@ -58,10 +58,12 @@ const Text = styled.span`
   }
 `;
 
-const BlockFive = () => (
-  <Wrapper>
-    <Text>Manic</Text>
-  </Wrapper>
-);
+function BlockFive() {
+  return (
+    <Wrapper>
+      <Text>Manic</Text>
+    </Wrapper>
+  );
+}
 
 export default BlockFive;

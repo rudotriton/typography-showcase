@@ -28,7 +28,7 @@ const Text = styled.span`
   transform: translate3d(${(p) => p.xpos}rem, 0, 0);
 `;
 
-const BlockFourteen = () => {
+function BlockFourteen() {
   const generateWaves = () => {
     const waves = [];
     for (let i = 1; i < 50; i += 1) {

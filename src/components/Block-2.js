@@ -52,11 +52,13 @@ const Circle = styled.div`
   transform: translate3d(0, 0, 0);
 `;
 
-const BlockTwo = () => (
-  <Wrapper>
-    <Circle />
-    <Text>Lust</Text>
-  </Wrapper>
-);
+function BlockTwo() {
+  return (
+    <Wrapper>
+      <Circle />
+      <Text>Lust</Text>
+    </Wrapper>
+  );
+}
 
 export default BlockTwo;

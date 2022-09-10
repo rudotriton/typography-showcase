@@ -66,7 +66,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const NotFoundPage = () => {
+function NotFoundPage() {
   const { history } = useRouter();
   useEffect(() => {
     history.push("notfound");

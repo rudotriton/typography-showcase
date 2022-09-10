@@ -48,10 +48,12 @@ const Text = styled.span`
   }
 `;
 
-const BlockTwelve = () => (
-  <Wrapper>
-    <Text>Cinnamon</Text>
-  </Wrapper>
-);
+function BlockTwelve() {
+  return (
+    <Wrapper>
+      <Text>Cinnamon</Text>
+    </Wrapper>
+  );
+}
 
 export default BlockTwelve;

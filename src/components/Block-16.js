@@ -50,11 +50,13 @@ const Text = styled.span`
   }
 `;
 
-const BlockSixteen = () => (
-  <Wrapper>
-    <Text>Enemy</Text>
-    <Text>Lines</Text>
-  </Wrapper>
-);
+function BlockSixteen() {
+  return (
+    <Wrapper>
+      <Text>Enemy</Text>
+      <Text>Lines</Text>
+    </Wrapper>
+  );
+}
 
 export default BlockSixteen;

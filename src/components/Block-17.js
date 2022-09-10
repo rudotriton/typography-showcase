@@ -54,7 +54,7 @@ const Letter = styled.span`
   }
 `;
 
-const BlockSeventeen = () => {
+function BlockSeventeen() {
   const createLetters = (text, delay) =>
     text.split("").map((letter, i) => (
       <Letter key={`${i + letter}`} letter={letter} delay={(delay + i) * 0.2}>

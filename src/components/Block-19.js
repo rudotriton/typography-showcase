@@ -80,19 +80,21 @@ const FlowerWrapper = styled.div`
   top: ${(p) => p.y}%;
 `;
 
-const Flower = ({ delay, x, y, rotation, speed }) => (
-  <FlowerWrapper speed={speed} delay={delay} x={x} y={y} rotation={rotation}>
-    <PetalLeaf rotate={0} tx={10} ty={0} />
-    <PetalLeaf rotate={90} tx={0} ty={0} />
-    <PetalLeaf rotate={0} tx={0} ty={10} />
-    <PetalLeaf rotate={90} tx={10} ty={-10} />
-    <PetalLeaf rotate={45} tx={12} ty={-5} petal />
-    <PetalLeaf rotate={45} tx={2} ty={5} petal />
-    <PetalLeaf rotate={-45} tx={5} ty={2} petal />
-    <PetalLeaf rotate={-45} tx={-5} ty={12} petal />
-    <Center tx={10} ty={10} />
-  </FlowerWrapper>
-);
+function Flower({ delay, x, y, rotation, speed }) {
+  return (
+    <FlowerWrapper speed={speed} delay={delay} x={x} y={y} rotation={rotation}>
+      <PetalLeaf rotate={0} tx={10} ty={0} />
+      <PetalLeaf rotate={90} tx={0} ty={0} />
+      <PetalLeaf rotate={0} tx={0} ty={10} />
+      <PetalLeaf rotate={90} tx={10} ty={-10} />
+      <PetalLeaf rotate={45} tx={12} ty={-5} petal />
+      <PetalLeaf rotate={45} tx={2} ty={5} petal />
+      <PetalLeaf rotate={-45} tx={5} ty={2} petal />
+      <PetalLeaf rotate={-45} tx={-5} ty={12} petal />
+      <Center tx={10} ty={10} />
+    </FlowerWrapper>
+  );
+}
 
 Flower.propTypes = {
   delay: PropTypes.number.isRequired,
@@ -102,7 +104,7 @@ Flower.propTypes = {
   speed: PropTypes.number.isRequired,
 };
 
-const BlockNineteen = () => {
+function BlockNineteen() {
   const createFlowers = () => {
     const flowers = [];
     for (let i = 0; i <= 15; i += 1) {
@@ -130,6 +132,6 @@ const BlockNineteen = () => {
       <Text>Grim Fandango</Text>
     </Wrapper>
   );
-};
+}
 
 export default BlockNineteen;

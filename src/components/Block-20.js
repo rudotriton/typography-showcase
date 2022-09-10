@@ -88,7 +88,7 @@ const ElementWrapper = styled.div`
   transform: translate3d(0, 0, 0);
 `;
 
-const Twenty = () => {
+function Twenty() {
   const createLines = () => {
     const lines = [];
     for (let i = 0; i <= 25; i += 1) {

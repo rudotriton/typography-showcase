@@ -96,14 +96,16 @@ const Text = styled.span`
   color: #ff2100;
 `;
 
-const BlockThirteen = () => (
-  <Wrapper>
-    <Horizon>
-      <SunMoon />
-    </Horizon>
-    <Text>Change</Text>
-    <Sea />
-  </Wrapper>
-);
+function BlockThirteen() {
+  return (
+    <Wrapper>
+      <Horizon>
+        <SunMoon />
+      </Horizon>
+      <Text>Change</Text>
+      <Sea />
+    </Wrapper>
+  );
+}
 
 export default BlockThirteen;

@@ -55,7 +55,7 @@ const Block = styled.div`
   transform: translate3d(0, 0, 0);
 `;
 
-const BlockFifteen = () => {
+function BlockFifteen() {
   const generateBlocks = () => {
     const blocks = [];
     for (let i = 0; i <= 4; i += 1) {

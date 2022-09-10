@@ -11,19 +11,21 @@ import Twenty from "components/Block-20";
 import Wrapper from "pages/PageWrapper";
 import React from "react";
 
-const PageTwo = () => (
-  <Wrapper>
-    <BlockEleven />
-    <BlockTwelve />
-    <BlockThirteen />
-    <BlockFourteen />
-    <BlockFifteen />
-    <BlockSixteen />
-    <BlockSeventeen />
-    <BlockEighteen />
-    <BlockNineteen />
-    <Twenty />
-  </Wrapper>
-);
+function PageTwo() {
+  return (
+    <Wrapper>
+      <BlockEleven />
+      <BlockTwelve />
+      <BlockThirteen />
+      <BlockFourteen />
+      <BlockFifteen />
+      <BlockSixteen />
+      <BlockSeventeen />
+      <BlockEighteen />
+      <BlockNineteen />
+      <Twenty />
+    </Wrapper>
+  );
+}
 
 export default PageTwo;

@@ -1,5 +1,5 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const appear1 = keyframes`
   0%,
@@ -43,7 +43,7 @@ const Wrapper = styled.div`
   overflow: hidden;
 
   & > span {
-    font-family: 'Pacifico', cursive;
+    font-family: "Pacifico", cursive;
     font-size: 10rem;
     z-index: 1;
     position: absolute;
@@ -73,13 +73,15 @@ const Text4 = styled.span`
   animation: ${appear3} 4s linear infinite;
 `;
 
-const BlockSix = () => (
-  <Wrapper>
-    <Text1>Bel Air</Text1>
-    <Text2>Bel Air</Text2>
-    <Text3>Bel Air</Text3>
-    <Text4>Bel Air</Text4>
-  </Wrapper>
-);
+function BlockSix() {
+  return (
+    <Wrapper>
+      <Text1>Bel Air</Text1>
+      <Text2>Bel Air</Text2>
+      <Text3>Bel Air</Text3>
+      <Text4>Bel Air</Text4>
+    </Wrapper>
+  );
+}
 
 export default BlockSix;

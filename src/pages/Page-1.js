@@ -11,19 +11,21 @@ import BlockNine from "components/Block-9";
 import Wrapper from "pages/PageWrapper";
 import React from "react";
 
-const PageOne = () => (
-  <Wrapper>
-    <BlockOne />
-    <BlockTwo />
-    <BlockThree />
-    <BlockFour />
-    <BlockFive />
-    <BlockSix />
-    <BlockSeven />
-    <BlockEight />
-    <BlockNine />
-    <BlockTen />
-  </Wrapper>
-);
+function PageOne() {
+  return (
+    <Wrapper>
+      <BlockOne />
+      <BlockTwo />
+      <BlockThree />
+      <BlockFour />
+      <BlockFive />
+      <BlockSix />
+      <BlockSeven />
+      <BlockEight />
+      <BlockNine />
+      <BlockTen />
+    </Wrapper>
+  );
+}
 
 export default PageOne;

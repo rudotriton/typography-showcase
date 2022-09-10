@@ -85,13 +85,15 @@ const Two = styled.span`
   transform: translate3d(-50%, -13%, 0);
 `;
 
-const BlockEleven = () => (
-  <Wrapper>
-    <Text>
-      <One>Bang</One>
-      <Two>Bang</Two>
-    </Text>
-  </Wrapper>
-);
+function BlockEleven() {
+  return (
+    <Wrapper>
+      <Text>
+        <One>Bang</One>
+        <Two>Bang</Two>
+      </Text>
+    </Wrapper>
+  );
+}
 
 export default BlockEleven;

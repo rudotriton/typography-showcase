@@ -128,16 +128,18 @@ const Wrapper = styled.div`
   }
 `;
 
-const BlockTen = () => (
-  <Wrapper>
-    <span className="first" aria-hidden="true">
-      ilomilo
-    </span>
-    <span>ilomilo</span>
-    <span className="last" aria-hidden="true">
-      ilomilo
-    </span>
-  </Wrapper>
-);
+function BlockTen() {
+  return (
+    <Wrapper>
+      <span className="first" aria-hidden="true">
+        ilomilo
+      </span>
+      <span>ilomilo</span>
+      <span className="last" aria-hidden="true">
+        ilomilo
+      </span>
+    </Wrapper>
+  );
+}
 
 export default BlockTen;

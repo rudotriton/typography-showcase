@@ -150,14 +150,16 @@ const Right = styled.div`
 `;
 
 // eslint-disable-next-line react/prop-types
-const BlinkingStar = ({ x, y, speed }) => (
-  <div>
-    <Star y={y} x={x} animation={Blink} speed={speed} />
-    <Left speed={speed} x={x} y={y} />
-    <Right speed={speed} x={x} y={y} />
-    <Top speed={speed} x={x} y={y} />
-    <Bottom speed={speed} x={x} y={y} />
-  </div>
-);
+function BlinkingStar({ x, y, speed }) {
+  return (
+    <div>
+      <Star y={y} x={x} animation={Blink} speed={speed} />
+      <Left speed={speed} x={x} y={y} />
+      <Right speed={speed} x={x} y={y} />
+      <Top speed={speed} x={x} y={y} />
+      <Bottom speed={speed} x={x} y={y} />
+    </div>
+  );
+}
 
 export default BlinkingStar;
